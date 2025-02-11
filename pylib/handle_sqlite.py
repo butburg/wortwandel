@@ -1,12 +1,13 @@
 import sqlite3
 import pandas as pd
 import logging
+import os.path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-def save_dataframe_to_db(df, table_name="data", db_path="dwh_data.db", if_exists="append"):
+def save_dataframe_to_db(df, table_name, db_path, if_exists="append"):
     """
     Save a pandas DataFrame to a SQLite table.
 
@@ -19,7 +20,7 @@ def save_dataframe_to_db(df, table_name="data", db_path="dwh_data.db", if_exists
     Returns:
         None
     """
-    connection = sqlite3.connect(db_path)
+    connection = sqlite3.connect(os.path.normpath(db_path))
     try:
         df.to_sql(table_name, connection, if_exists=if_exists, index=False)
         logging.info(f"Data saved to table '{table_name}' in '{db_path}' successfully.")
@@ -41,7 +42,7 @@ def read_table_as_dataframe(table_name="data", db_path="dwh_data.db"):
     Returns:
         pd.DataFrame: DataFrame containing the table data.
     """
-    connection = sqlite3.connect(db_path)
+    connection = sqlite3.connect(os.path.normpath(db_path))
     try:
         query = f"SELECT * FROM {table_name}"
         df = pd.read_sql_query(query, connection)
