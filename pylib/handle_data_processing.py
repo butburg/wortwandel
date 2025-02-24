@@ -50,14 +50,14 @@ def extract_context_and_wordparts(words, context_window=3):
     return matches
 
 
-def process_newspaper_with_context(newspaper, context_window=3):
+def process_newspaper_with_context(name, date, file_path, encoding, context_window=3):
     """Processes an individual newspaper file and returns dictionaries for context and metadata."""
 
-    logging.info(f"Processing newspaper: {newspaper['name']} ({newspaper['date']})")
+    logging.info(f"Processing newspaper: {name} ({date})")
 
     try:
         # Read and parse the html file
-        html = read_html_file(newspaper['file_name'], newspaper['encoding'])
+        html = read_html_file(file_path, encoding)
         bs = BeautifulSoup(html, "html.parser")
         body_text = bs.body.get_text(" ")
         words = body_text.split()
@@ -67,20 +67,20 @@ def process_newspaper_with_context(newspaper, context_window=3):
 
         # Prepare metadata, so we also know, if there is no 'klima' at all in a newspaper
         metadata = {
-            "newspaper": newspaper["name"],
-            "data_published": newspaper["date"],
+            "newspaper_name": name,
+            "data_published": date,
             "klima_mentions_count": len(klima_contexts)
             }
 
         # Log the result of this newspaper and the count of substring 'klima'
         if metadata['klima_mentions_count'] == 0:
-            logging.info(f"No 'klima' mentions found in {newspaper['name']} for {newspaper['date']}.")
+            logging.info(f"No 'klima' mentions found in {name} for {date}.")
         else:
-            logging.info(f"{metadata['klima_mentions_count']} 'klima' mentions in {newspaper['name']} for {newspaper['date']}.")
+            logging.info(f"{metadata['klima_mentions_count']} 'klima' mentions in {name} for {date}.")
 
 
         return metadata, klima_contexts
 
     except Exception as e:
-        logging.error(f"Error processing {newspaper['name']}: {e}")
+        logging.error(f"Error processing {name}: {e}")
         raise
