@@ -5,9 +5,10 @@ Pipfile*
 **/*.html
 **/*.sqlite3
 **/*.tar.gz
-**/*.csv
+
 
 data_input/
+data_output/
 
 # ---- generated ----
 # Byte-compiled / optimized / DLL files

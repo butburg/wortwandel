@@ -1,0 +1,13 @@
+-- database: /home/butburg/repos/wortwandel/data_output/dwh_data.db
+SELECT
+    *
+FROM
+    context;
+
+DROP TABLE context;
+
+DROP TABLE newspapers;
+
+DROP TABLE test_table;
+
+DROP TABLE papers;
