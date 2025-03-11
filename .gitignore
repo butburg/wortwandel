@@ -1,14 +1,18 @@
-# pipenv
-Pipfile*
+# log files
+*.log
 
 # website data and sqlite date
 **/*.html
 **/*.sqlite3
 **/*.tar.gz
 
-
+# Data Export Import Locations
 data_input/
 data_output/
+
+# IDE stuff
+.vscode/
+.idea/
 
 # ---- generated ----
 # Byte-compiled / optimized / DLL files
