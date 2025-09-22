@@ -13,6 +13,7 @@ textblob = "*"
 lxml = "*"
 
 [dev-packages]
+nbstripout = "*"
 
 [requires]
 python_version = "3.10"
