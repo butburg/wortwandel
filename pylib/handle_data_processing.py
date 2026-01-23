@@ -8,11 +8,13 @@ import pandas as pd
 
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Regex patterns for 'klima'
-KLIMA_PREFIX_SUFFIX = re.compile(r'(.*?)-?klima(?:-?(\w+))?', re.IGNORECASE)
-KLIMA_PART_MATCH = re.compile(r'\bklima(?:\w+|-?\w+)?\b', re.IGNORECASE)
+KLIMA_PREFIX_SUFFIX = re.compile(r"(.*?)-?klima(?:-?(\w+))?", re.IGNORECASE)
+KLIMA_PART_MATCH = re.compile(r"\bklima(?:\w+|-?\w+)?\b", re.IGNORECASE)
 
 
 def read_html_file(filename, encoding="utf-8"):
@@ -44,12 +46,14 @@ def extract_context_and_wordparts(words, context_window=3):
         if KLIMA_PART_MATCH.search(word):  # Match 'klima' or related words
             pre_context, post_context = get_context(words, i, context_window)
             prefix, suffix = extract_prefix_suffix(word)
-            matches.append({
-                "pre_context": pre_context,
-                "post_context": post_context,
-                "prefix": prefix,
-                "suffix": suffix,
-            })
+            matches.append(
+                {
+                    "pre_context": pre_context,
+                    "post_context": post_context,
+                    "prefix": prefix,
+                    "suffix": suffix,
+                }
+            )
     return matches
 
 
@@ -60,7 +64,15 @@ def process_newspaper_with_context(name, date, file_path, encoding, context_wind
         html = read_html_file(file_path, encoding)
 
         # Parse only with lxml for performance
-        bs = BeautifulSoup(html, "lxml")  
+        bs = BeautifulSoup(html, "lxml")
+
+        # clear non de entries before by checking in in <html lang="...">
+        # all accesible website own a lang tag
+        html_tag = bs.find("html")
+        lang = html_tag.get("lang", "") if html_tag else ""
+        if not lang.startswith("de"):
+            logging.info(f"Skipping {name} ({date}) due to non-German language: {lang}")
+            return None, None
 
         # Extract the body first to reduce unnecessary processing
         body = bs.body
@@ -73,7 +85,7 @@ def process_newspaper_with_context(name, date, file_path, encoding, context_wind
 
         # Extract words efficiently. Format of stripped_string are phrases, splitting them to get words/token
         words = [word for text in body.stripped_strings for word in text.split()]
-        
+
         # Extracts context, prefix, and suffix for each 'klima' mention found in the newspaper's content.
         klima_contexts = extract_context_and_wordparts(words, context_window)
 
@@ -81,10 +93,10 @@ def process_newspaper_with_context(name, date, file_path, encoding, context_wind
         metadata = {
             "newspaper_name": name,
             "data_published": date,
-            "klima_mentions_count": len(klima_contexts)
-            }
+            "klima_mentions_count": len(klima_contexts),
+        }
 
-        #logging.info(f"{metadata['klima_mentions_count']} 'klima' mentions in {name} for {date}.")
+        # logging.info(f"{metadata['klima_mentions_count']} 'klima' mentions in {name} for {date}.")
 
         return metadata, klima_contexts
 
@@ -93,18 +105,25 @@ def process_newspaper_with_context(name, date, file_path, encoding, context_wind
         raise
 
 
-
 def process_newspaper_wrapper(news, input_path_prefix):
     """Wrapper function to process a single newspaper and catch errors."""
     try:
         news["file_path"] = f"{input_path_prefix}/{news.pop('file_name')}"
         return process_newspaper_with_context(**news)
     except Exception as e:
-        logging.error(f"Error processing newspaper {news['name']} ({news['date']}): {e}")
+        logging.error(
+            f"Error processing newspaper {news['name']} ({news['date']}): {e}"
+        )
         return None, None  # Return None to indicate failure
 
 
-def batch_process_newspapers(newspapers, batch_size=2, num_workers=4, db_path="data_output/dwh_data.db", input_path_prefix="data_input"):
+def batch_process_newspapers(
+    newspapers,
+    batch_size=2,
+    num_workers=4,
+    db_path="data_output/dwh_data.db",
+    input_path_prefix="data_input",
+):
     """Processes newspapers in batches and saves results to DB with multiprocessing."""
     metadata_collection = []
     context_collection = []
@@ -112,10 +131,12 @@ def batch_process_newspapers(newspapers, batch_size=2, num_workers=4, db_path="d
 
     pool = multiprocessing.Pool(num_workers)
 
-    for i in range(0, len(newspapers), batch_size):  
-        batch = newspapers[i:i + batch_size]  # Get the next batch
+    for i in range(0, len(newspapers), batch_size):
+        batch = newspapers[i : i + batch_size]  # Get the next batch
 
-        results = pool.starmap(process_newspaper_wrapper, [(news, input_path_prefix) for news in batch])
+        results = pool.starmap(
+            process_newspaper_wrapper, [(news, input_path_prefix) for news in batch]
+        )
 
         for metadata, context_data in results:
             if metadata is None:
@@ -133,14 +154,20 @@ def batch_process_newspapers(newspapers, batch_size=2, num_workers=4, db_path="d
 
         # Convert batch to DataFrame and save
         if metadata_collection:
-            logging.info(f"Processing at date {metadata_collection[-1].get("data_published", "Unknown Date")}.")
+            logging.info(
+                f"Processing at date {metadata_collection[-1].get("data_published", "Unknown Date")}."
+            )
             final_metadata_df = pd.DataFrame(metadata_collection)
-            save_dataframe_to_db(final_metadata_df, "newspapers", db_path=db_path, if_exists="append")
+            save_dataframe_to_db(
+                final_metadata_df, "newspapers", db_path=db_path, if_exists="append"
+            )
             metadata_collection.clear()
 
         if context_collection:
             final_context_df = pd.DataFrame(context_collection)
-            save_dataframe_to_db(final_context_df, "context", db_path=db_path, if_exists="append")
+            save_dataframe_to_db(
+                final_context_df, "context", db_path=db_path, if_exists="append"
+            )
             context_collection.clear()
 
     pool.close()
