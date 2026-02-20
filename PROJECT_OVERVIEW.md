@@ -123,11 +123,11 @@ User (direkt)
 
 4. 🔄 **Suffix-Analyse** (folgt)
    - Häufigste deutsche Klima-Komposita
-   - Sollte zeigen: Klimaschutz, Klimawandel, Klimakrise (Top 3)
+   - Sollte zeigen: Klimaschutz, Klimawandel, Klimakrise (Top 3 oder mehr)
 
 5. 🔄 **Trend-Analyse** (folgt)
    - Zeitverlauf ab 21.04.2022
-   - Grafik mit 3 Linien: Klimaschutz, Klimawandel, Klimakrise
+   - Grafik mit 3 oder mehr Linien: Klimaschutz, Klimawandel, Klimakrise
 
 ### Phase 2: Recherche (Research-Agent führt aus)
 - ✅ Literatur zu Klima-Begriffsgebrauch gesammelt (8 Quellen)

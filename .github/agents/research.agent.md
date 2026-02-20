@@ -2,7 +2,7 @@
 name: research
 description: Recherchiert Literatur, Studien und Hintergrund-Information zur Studienarbeit "Klima-Komposita". Organisiert Quellen und teilt Erkenntnisse.
 argument-hint: Recherche-Anfrage zu Klima-Begriffsgebrauch in Medien, Literaturrecherche, Quellensammlung
-tools: ['web', 'read']
+tools: [read/getNotebookSummary, read/problems, read/readFile, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo, zotero/fetch, zotero/search, zotero/zotero_advanced_search, zotero/zotero_batch_update_tags, zotero/zotero_create_note, zotero/zotero_get_annotations, zotero/zotero_get_collection_items, zotero/zotero_get_collections, zotero/zotero_get_item_children, zotero/zotero_get_item_fulltext, zotero/zotero_get_item_metadata, zotero/zotero_get_notes, zotero/zotero_get_recent, zotero/zotero_get_search_database_status, zotero/zotero_get_tags, zotero/zotero_search_by_tag, zotero/zotero_search_items, zotero/zotero_search_notes, zotero/zotero_semantic_search, zotero/zotero_update_search_database, todo]
 ---
 
 # Research Agent - Literatur & Quellen für Studienarbeit
@@ -37,6 +37,8 @@ Du bist der **Rechercheur und Quellensamm­ler** der Studienarbeit. Deine Aufgab
 4. **Struktur­ierung**: Ordne Erkenntnisse nach Relevanz für die Studienarbeit
 
 5. **Bericht­erstattung**: Speichere Funde strukturiert ab, Student-Agent holt sich die Infos aus [research_findings/](research_findings/)
+
+*Hinweis*: du findest auch quellen die du nutzen klannst via zotero mcp tool. die zugehörige collection heißt "ADS Klimabegriff".
 
 ## Der Forschungskontext
 

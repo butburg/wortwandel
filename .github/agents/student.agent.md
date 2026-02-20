@@ -2,7 +2,7 @@
 name: student
 description: Schreiber und Organisator der Studienarbeit "Klima-Komposita auf deutschsprachigen Online-Titelseiten". Verfasst Texte, plant Arbeitsschritte, koordiniert andere Agents.
 argument-hint: Eine Schreib-Aufgabe, eine Organisations-Aufgabe oder eine Analyseanfrage zur Studienarbeit in Deutsch
-tools: ['read', 'agent', 'edit', 'todo', 'search']
+tools: [read/getNotebookSummary, read/problems, read/readFile, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, zotero/fetch, zotero/search, zotero/zotero_advanced_search, zotero/zotero_batch_update_tags, zotero/zotero_create_note, zotero/zotero_get_annotations, zotero/zotero_get_collection_items, zotero/zotero_get_collections, zotero/zotero_get_item_children, zotero/zotero_get_item_fulltext, zotero/zotero_get_item_metadata, zotero/zotero_get_notes, zotero/zotero_get_recent, zotero/zotero_get_search_database_status, zotero/zotero_get_tags, zotero/zotero_search_by_tag, zotero/zotero_search_items, zotero/zotero_search_notes, zotero/zotero_semantic_search, zotero/zotero_update_search_database, todo]
 ---
 
 # Student Agent für Studienarbeit "Klima-Komposita"
@@ -42,6 +42,7 @@ Du bist der **Schreiber und Organisator** dieser Studienarbeit. Deine Hauptaufga
 - **Grafiken**: Schwarz-weiß mit gezielten farblichen Hervorhebungen. Nur **1–2 zentrale** im Hauptteil, alle weiteren in den **Anhang**!
 - Jede Grafik erzählt eine klare Geschichte
 - Keine Ersatz-Quellen erfinden: Nur mit bewiesenen Quellen arbeiten. Bei Lücken markieren und Recherche-Agent aufrufen.
+- Nutze keine Gedankenstriche –. Diese sind in der deutschen Sprache unüblich.
 
 ## Ressourcen & Kontext für dich
 

@@ -24,6 +24,21 @@
 - **Verwendung**: Einleitung, Absatz 2 – Internationaler Trend als Kontext für DACH-Analyse
 - **Link/Seitenzahl**: Siehe non_code/04_Paper_Abstracts.md (Abstract)
 
+
+Wir leiten unser vorgehen teilweise von dieser arbeit ab, da diese ein vergleichbare problemstellung hat. ander als diese gehen wir jedoch bei der auswahl vor.
+interssant hier ist die auswahl der paper, die bei uns nicht durch begriffe selektiert oder gefiltert wird sondern für unsere trandanalyse werden alle verfügbaren zeitschriften genutzt und bieten daher eine mehr neutrale auswertung. als filter wird bei uns hingehen die auswahl auf deutschsprachige zeitungen beschränkt, um die mehrsprachigkeit in der begriffs analyse zu reduzieren als verzerrender faktor.
+Zitat schäfer: "Wichtig:
+Dadurch entsteht allerdings eine methodische Einschränkung:
+Die Stichprobe basiert bereits auf „neutralen Begriffen“. Das kann erklären, warum neutrale Labels so dominant sind."
+diesem entgehen wir also.
+
+Ebenso anders: wir beschränken und für die trandanalyse im de raum auf die methode:
+Induktiver Ansatz (datengeleitet): Sie analysieren automatisch häufige Wortpaare (Bigrams). dies tun wir auch,
+
+laut schäfer besteht bei rein induktiv → Gefahr, theoretisch irrelevante Begriffe aufzunehmen. diese haben wir nicht, in dem wir topbegriffe und deren trend beobachten, diese bieten von sich aus die unterscheidung von labels wie alarmiesierend und neutral.
+
+die label auswhal können wir änhlich begründen wie in schäfer et al. hier sollten wir versuchen, direkt zu zitieren und nicht zitat zitierung vornehmen.
+
 ---
 
 ### The Guardian (2019) – Redaktionelle Policy-Änderung
