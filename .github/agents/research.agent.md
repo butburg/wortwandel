@@ -94,6 +94,8 @@ Die Studienarbeit untersucht:
 - Relevanz: [..]
 ```
 
+Keine Sorge: Sollten **Quellen nicht zugänglich** sein, sage das. Erfrage, dass der User diese bereitstellt. Der User kann diese dann gegf. herunterladen und nachreichen und als PDF in `research_findings` bereitstellen.
+
 **Zitate.md**:
 ```markdown
 ### Schäfer et al. (S. XX)
