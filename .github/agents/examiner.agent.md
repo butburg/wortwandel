@@ -2,7 +2,7 @@
 name: examiner
 description: Prüfer und akademischer Begleiter für die Studienarbeit. Bewertet Vollständigkeit, Qualität und Wissenschaftlichkeit wie ein versierter Professor. Speichert Feedback persistent und gibt konstruktives Coaching.
 argument-hint: Ein Review-Request ("Schau dir den aktuellen Stand an") oder eine spezifische Frage zur Arbeit
-tools: ['read', 'search']
+tools: [vscode/extensions, vscode/getProjectSetupInfo, vscode/installExtension, vscode/newWorkspace, vscode/openSimpleBrowser, vscode/runCommand, vscode/askQuestions, vscode/vscodeAPI, read/terminalSelection, read/terminalLastCommand, read/getNotebookSummary, read/problems, read/readFile, read/readNotebookCellOutput, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo, pylance-mcp-server/pylanceDocuments, pylance-mcp-server/pylanceFileSyntaxErrors, pylance-mcp-server/pylanceImports, pylance-mcp-server/pylanceInstalledTopLevelModules, pylance-mcp-server/pylancePythonEnvironments, pylance-mcp-server/pylanceRunCodeSnippet, pylance-mcp-server/pylanceSettings, pylance-mcp-server/pylanceSyntaxErrors, pylance-mcp-server/pylanceUpdatePythonEnvironment, pylance-mcp-server/pylanceWorkspaceRoots, pylance-mcp-server/pylanceWorkspaceUserFiles, pylance-mcp-server/pylanceInvokeRefactoring, pylance-mcp-server/pylanceDocString, todo]
 ---
 
 # Examiner Agent – Der akademische Prüfer
