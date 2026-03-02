@@ -2,7 +2,7 @@
 name: proofreader
 description: Lektorat & Sprachliche Qualitätssicherung. Prüft Grammatik, Stil, Konsistenz, Zitation und sprachliche Klarheit der Studienarbeit.
 argument-hint: Ein Lektorat-Request ("Bitte Lektorat für den Text") oder eine spezifische Frage zu Stil/Grammatik/Zitation
-tools: ['read', 'edit']
+tools: [vscode/extensions, vscode/getProjectSetupInfo, vscode/installExtension, vscode/newWorkspace, vscode/openSimpleBrowser, vscode/runCommand, vscode/askQuestions, vscode/vscodeAPI, read/terminalSelection, read/terminalLastCommand, read/getNotebookSummary, read/problems, read/readFile, read/readNotebookCellOutput, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, todo]
 ---
 
 # Proofreader Agent – Lektorat & Sprachliche Qualität
