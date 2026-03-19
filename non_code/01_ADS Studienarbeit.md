@@ -30,180 +30,164 @@ Prof. Dr. Marcel Hebing
 
 
 Eingereicht von          	Edwin Wiese
-Datum                           	12\. Sept. 2025
+Datum                           	12. Sept. 2025
 
-## **Einleitung**
+## 1. Einleitung
 
-Die öffentliche Debatte über den Klimawandel hat sich in den letzten Jahren stark verändert – nicht nur inhaltlich, sondern auch sprachlich. Der Begriff *Klima* ist längst nicht mehr eine rein wissenschaftliche Vokabel, sondern ein hoch aufgeladenes Schlagwort in Politik und Medien. Während wissenschaftliche Institutionen wie der Weltklimarat (IPCC) die Dringlichkeit der globalen Erwärmung betonen, tragen insbesondere die Medien dazu bei, ob diese Dringlichkeit in der breiten Öffentlichkeit ankommt Schäfer+et+al.\_FERDIG
+Die öffentliche Klimadebatte wird nicht nur über Daten und Ereignisse geführt, sondern auch über Begriffe. Ob Medien eher von Klimawandel, Klimaschutz oder Klimakrise sprechen, beeinflusst die Wahrnehmung von Dringlichkeit, Verantwortlichkeit und Handlungsbedarf. Für die gesellschaftliche Einordnung der Klimakrise sind diese sprachlichen Unterschiede relevant, weil sie als Teil journalistischer Agenda- und Framebildung wirken (Entman, 1993; McHugh et al., 2021). Die wissenschaftliche Dringlichkeit ist zugleich gut belegt, etwa durch den AR6-Synthesebericht des IPCC (IPCC, 2023).
 
-Internationale Studien zeigen, dass sich die Sprachwahl in Nachrichtenartikeln verschiebt: Begriffe wie „climate change“ oder „global warming“, lange dominierende Formulierungen, wurden in vielen Redaktionen durch markantere Ausdrücke wie „climate crisis“ oder „climate emergency“ ergänzt Schäfer+et+al.\_FERDIG
+Internationale Befunde zeigen eine Verschiebung der Klima-Terminologie seit 2019. In einer groß angelegten automatisierten Inhaltsanalyse mit 89.887 Artikeln aus acht Ländern dokumentieren Schäfer et al. (2023), dass alarmistische Labels wie climate crisis oder climate emergency zugenommen haben, während neutrale Begriffe insgesamt weiter dominieren. Parallel dazu änderten einzelne Leitmedien ihre Sprachrichtlinien, etwa der Guardian im Jahr 2019. Dieser Schritt gilt als wichtiger Mitfaktor der Debatte, aber nicht als alleinige Ursache der internationalen Entwicklung (Carrington, 2019; Schäfer et al., 2023).
 
-. Diese Entwicklung spiegelt nicht nur eine Verschärfung der wissenschaftlichen Befunde wider, sondern auch den Versuch, stärkeres Problembewusstsein zu erzeugen. Denn Sprache wirkt nicht nur beschreibend, sondern formt Wahrnehmungen, erzeugt Emotionen und kann politische Handlungsbereitschaft beeinflussen Schäfer+et+al.\_FERDIG
+Gleichzeitig ist die Wirkung alarmistischer Begriffe umstritten. Experimentelle Evidenz zeigt, dass emergency-Formulierungen die wahrgenommene Glaubwürdigkeit von Beiträgen senken können, ohne das Klima-Engagement systematisch zu erhöhen (Feldman & Hart, 2021). Für Governance und Politik lassen sich ebenfalls keine einfachen linearen Effekte ableiten, sondern je nach Kontext unterschiedliche Reaktionspfade (McHugh et al., 2021). Damit entsteht eine Spannungsfrage zwischen sprachlicher Dringlichkeit und kommunikativer Anschlussfähigkeit.
 
-Die Verwendung solcher „alarmistischen Labels“ bleibt jedoch umstritten. Kritiker warnen, dass der Begriff *Krise* eher ein kurzfristiges Ereignis nahelegt und damit der langfristigen, strukturellen Natur des Klimawandels nicht gerecht werde. Zugleich wird argumentiert, dass übermäßige Bedrohungsrhetorik Ohnmachtsgefühle hervorrufen und Engagement hemmen könne Schäfer+et+al.\_FERDIG
+Für den deutschsprachigen Raum besteht hierzu weiterhin eine Lücke. Es liegen zwar internationale und theoretische Arbeiten vor, aber nur wenige direkte Zeitreihenbefunde zur Verwendung zentraler Klima-Begriffe auf deutschsprachigen Online-Titelseiten im Zeitraum 2021 bis 2025. Genau hier setzt diese Arbeit an.
 
-Dennoch zeigen jüngere Arbeiten, dass gerade seit 2019 ein spürbarer Anstieg solcher Bezeichnungen stattfindet, ausgelöst durch Leitmedien wie den *Guardian* und verstärkt durch Bewegungen wie *Fridays for Future* Schäfer+et+al.\_FERDIG
+Die zentrale Forschungsfrage lautet:
 
-Für den deutschsprachigen Raum zeichnet sich ein weniger einheitliches Bild ab. Eine erste Recherche in deutschen, österreichischen und schweizerischen Redaktionen verdeutlicht: Während einzelne Medien „Klimakrise“ oder „Erderhitzung“ aktiv nutzen, bevorzugen andere weiterhin neutralere Begriffe wie „Klimawandel“. Eine einheitliche Sprachregelung gibt es nicht; vielmehr entwickelt sich der Sprachgebrauch evolutionär, abhängig von Medium, Redaktion und Kontext. erste recherche in newspapern 2…
+**Wie hat sich die Verwendung der häufigsten Begriffe mit dem Wortstamm Klima auf deutschsprachigen Online-Titelseiten zwischen 2021 und 2025 entwickelt?**
 
-Gerade deshalb ist eine systematische Analyse für die DACH-Region von hoher Relevanz. Mit unseren eigens gescrapten Titelseiten-Daten der Jahre 2021–2025 können wir überprüfen, ob die oft getroffene Annahme – „die Rede von der Klimakrise nimmt zu“ – tatsächlich belegbar ist oder nicht. Indem wir den Fokus auf **Titelseiten** legen, also auf besonders aufmerksamkeitsstarke Kommunikationsflächen, lassen sich Trends im medialen Agenda Setting sichtbar machen.
+Der Beitrag der Arbeit ist zweifach. Erstens liefert sie eine DACH-spezifische Anschlussanalyse zu internationalen Studien. Zweitens vergleicht sie neutral-deskriptive, handlungsorientierte und alarmistische Begriffe auf einer einheitlichen Datengrundlage und macht damit die Richtung des medialen Begriffswandels transparent.
 
-Die zentrale Forschungsfrage dieser Arbeit lautet daher:
- **Wie hat sich die Verwendung der häufigsten Begriffe mit dem Wortstamm „Klima“ auf deutschsprachigen Online-Titelseiten zwischen 2021 und 2025 entwickelt?**
+## 2. Daten und Methoden
 
-Mit dieser Analyse leisten wir einen doppelten Beitrag: Erstens ergänzen wir internationale Studien um eine aktuelle, auf den DACH-Raum fokussierte Perspektive. Zweitens prüfen wir empirisch, ob die behauptete Zunahme alarmistischer Begriffe wie „Klimakrise“ in unseren Daten sichtbar wird – oder ob stattdessen neutrale Begriffe dominieren.
+### 2.1 Datenbasis
 
-## **Daten und Methoden**
+Die empirische Grundlage bilden eigene Scraper-Daten aus deutschsprachigen Online-Medien. Zwischen April 2021 und Januar 2025 wurden täglich um 09:00 Uhr Titelseiten automatisiert erfasst und in einer SQLite-basierten Datenstruktur gespeichert. Insgesamt umfasst das Rohpanel 47 Medienquellen. Für die Analyse wurden zwei Ebenen genutzt:
 
-### Datenbasis
+1. Metadaten je Crawl-Einheit, einschließlich Datum, Quelle und Klima-Nennungen.
+2. Kontextdaten mit den gefundenen Klima-Komposita und Textumgebung.
 
-Die Grundlage dieser Untersuchung bilden eigens erhobene Scraper-Daten von Online-Titelseiten führender deutschsprachiger Nachrichtenportale. Zwischen April 2021 und Januar 2025 wurden täglich um 9:00 Uhr die Startseiten von Publikationen aus Deutschland, Österreich und der Schweiz automatisiert erfasst. Die Rohdaten wurden anschließend in einer SQLite-Datenbank strukturiert gespeichert, wobei zwei zentrale Tabellen entstanden: eine Metadaten-Tabelle mit Informationen zu jeder gecrawlten Titelseite (Datum, Medium, Anzahl Klima-Erwähnungen) sowie eine Kontext-Tabelle, die alle Fundstellen von Begriffen mit dem Wortstamm „Klima" samt Textumgebung enthält.
+Diese Trennung erlaubt eine methodisch wichtige Unterscheidung zwischen echten Nullbeobachtungen und Erhebungslücken. Tage mit klima_mentions_count = 0 sind beobachtete Nullwerte, fehlende Einträge dagegen potenzielle technische Ausfälle.
 
-Die Datenstruktur erlaubt eine klare Unterscheidung zwischen Tagen ohne Klima-Erwähnung und echten Erfassungslücken: Auch Titelseiten ohne Klima-Bezug wurden in der Metadaten-Tabelle erfasst (mit `klima_mentions_count = 0`), sodass fehlende Einträge tatsächliche Scraper-Ausfälle repräsentieren.
+### 2.2 Analysezeitraum und struktureller Bruch
 
-### Scraper-Wechsel und Analyseperiode
+Die Coverage-Prüfung zeigt einen strukturellen Einschnitt am 21.04.2022 durch eine Änderung der Scraper-Architektur und des Quellenpanels. Um verzerrte Vorher-Nachher-Vergleiche zu vermeiden, basiert die quantitative Hauptauswertung auf dem stabileren Zeitraum vom 21.04.2022 bis 31.01.2025. Dieser Zeitraum umfasst 1.017 Kalendertage. Für diesen Zeitraum liegen Daten von 45 Medienquellen vor.
 
-Eine Analyse der zeitlichen Datenabdeckung zeigte eine Diskontinuität am 21. April 2022. An diesem Datum wurde das Scraper-Programm umgestellt, wobei 14 Publikationen neu hinzukamen und 3 wegfielen. Um Verzerrungen durch diese strukturelle Änderung zu vermeiden, beschränkt sich die quantitative Analyse auf den Zeitraum vom 21. April 2022 bis Januar 2025 (rund 2,8 Jahre).
+### 2.3 Begriffsauswahl und Kategorisierung
 
-### Begriffsauswahl
+Analysiert werden die drei häufigsten Klima-Komposita der Datenbasis:
 
-Aus der Gesamtheit aller Klima-Komposita wurden die drei häufigsten Begriffe für die vertiefte Analyse ausgewählt: **Klimawandel**, **Klimaschutz** und **Klimakrise**. Diese drei Begriffe machen den überwiegenden Teil aller Klima-Nennungen aus und bilden zugleich unterschiedliche semantische Kategorien ab:
+- Klimawandel als neutral-deskriptiver Begriff
+- Klimaschutz als handlungsorientierter Begriff
+- Klimakrise als alarmistischer Begriff
 
-- **Klimawandel**: Beschreibt den Prozess der globalen Erwärmung in neutraler, wissenschaftlich etablierter Terminologie.
-- **Klimaschutz**: Handlungsorientierter Begriff mit Fokus auf Maßnahmen und Lösungsansätze.
-- **Klimakrise**: Alarmistischer Begriff, der Dringlichkeit und Bedrohung betont; in der internationalen Debatte seit 2019 verstärkt genutzt (vgl. Schäfer et al., 2023).
+Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c). Die Kategorie neutral-deskriptiv wird im Folgenden kurz als neutral bezeichnet.
 
-### Methodisches Vorgehen
+Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer den drei Zielbegriffen Klimawandel, Klimaschutz und Klimakrise zugeordnet. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv und enthält keine inferenzstatistischen Signifikanztests.
 
-Die Analyse folgte einem mehrstufigen Verfahren:
+### 2.4 Auswertungsschritte
 
-1. **Frequenzanalyse**: Auszählung der absoluten und relativen Häufigkeiten der drei Begriffe über den gesamten Zeitraum.
-2. **Trendanalyse**: Berechnung der quartalweisen Anteile je Begriff, um zeitliche Entwicklungen sichtbar zu machen.
-3. **Kategorisierung**: In Anlehnung an Schäfer et al. (2023) wurden die Begriffe in *neutral* (Klimawandel) und *alarmistisch* (Klimakrise) kategorisiert. Klimaschutz wurde als handlungsorientierte Kategorie separat betrachtet.
+Die Auswertung umfasst drei Schritte:
 
-### Datenqualität und Limitationen
+1. Absolute Häufigkeiten der drei Begriffe über den Gesamtzeitraum.
+2. Quartalsweise relative Anteile zur Trendbeobachtung.
+3. Vergleich neutral vs. alarmistisch als reduziertes Zwei-Kategorien-Setting (Klimawandel vs. Klimakrise), angelehnt an internationale Vergleichslogik.
 
-Die Coverage-Analyse ergab, dass die meisten Publikationen ab dem 21. April 2022 eine hohe Abdeckungsrate aufweisen. Dennoch bestehen methodische Einschränkungen:
+Wichtiger Hinweis zum Nenner: Relative Anteile in Kapitel 3 beziehen sich auf die Summe der drei Zielbegriffe (Top-3-Set) und nicht auf alle im Korpus vorkommenden Klima-Komposita.
 
-- **Selektive Medienauswahl**: Die Scraper-Auswahl bildet nicht das gesamte Spektrum deutschsprachiger Medien ab; insbesondere regionale Tageszeitungen und Boulevardmedien sind unterrepräsentiert.
-- **Nur Titelseiten**: Die Analyse beschränkt sich auf Startseiten und erfasst damit primär die redaktionelle Agenda-Setting-Ebene, nicht jedoch das gesamte Nachrichtenangebot.
-- **Technische Ausfälle**: Vereinzelte Lücken durch Serverausfälle oder Änderungen der Website-Struktur konnten nicht vollständig ausgeschlossen werden.
+### 2.5 Datenqualität und Grenzen
 
-## **Ergebnisse**
+Die Aussagekraft der Analyse wird durch folgende Punkte begrenzt:
 
-Im Folgenden werden die zentralen Befunde der quantitativen Analyse dargestellt. Der Fokus liegt auf der zeitlichen Entwicklung der drei häufigsten Klima-Komposita: Klimawandel, Klimaschutz und Klimakrise.
+- Selektion der Quellen: Das Panel bildet nicht das gesamte deutschsprachige Mediensystem ab.
+- Fokus auf Titelseiten: Keine Volltextanalyse der Artikelkörper.
+- Technische Unsicherheit: Einzelne Ausfälle durch Website-Änderungen sind nicht vollständig vermeidbar.
+- Vergleichbarkeit: Der internationale Literaturvergleich ist inhaltlich, aber nicht vollständig methodengleich.
+- Statistische Unsicherheit: Es wurden keine Konfidenzintervalle oder formalen Trendtests berechnet.
 
-### **3.1 Gesamtverteilung der Begriffe**
+## 3. Ergebnisse
 
-Insgesamt wurden im Analysezeitraum (21. April 2022 bis Januar 2025) **46.785 Nennungen** der drei untersuchten Begriffe auf den deutschsprachigen Titelseiten erfasst. Die Verteilung zeigt deutliche Unterschiede:
+### 3.1 Gesamtverteilung
+
+Im Analysezeitraum (21.04.2022 bis 31.01.2025) wurden insgesamt 46.785 Nennungen der drei Zielbegriffe gezählt.
 
 | Begriff | Absolute Häufigkeit | Relativer Anteil |
 |---------|--------------------:|----------------:|
-| **Klimaschutz** | ca. 15.600 | 33,4 % |
-| **Klimawandel** | ca. 21.200 | 45,3 % |
-| **Klimakrise** | ca. 9.985 | 21,3 % |
+| Klimawandel | 21.542 | 46,04 % |
+| Klimaschutz | 14.663 | 31,34 % |
+| Klimakrise | 10.580 | 22,61 % |
 
-Damit dominiert **Klimawandel** als häufigster Begriff, während der alarmistische Begriff **Klimakrise** mit rund einem Fünftel der Nennungen deutlich seltener erscheint.
+Der am häufigsten verwendete Begriff ist Klimawandel. Klimakrise bleibt mit gut einem Fünftel der Nennungen deutlich dahinter.
 
-![Grafik 3: Absolute Häufigkeiten der Klima-Begriffe](../code_generated/grafik_3_absolute_haeufigkeiten.png)
+### 3.2 Zeitliche Entwicklung der drei Begriffe
 
-*Abbildung 1: Absolute Häufigkeit der drei Klima-Begriffe auf deutschsprachigen Titelseiten (2022–2025). Klimawandel dominiert mit Abstand.*
+Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
-### **3.2 Zeitliche Entwicklung**
+- Klimawandel steigt von rund 39 % auf 52 %.
+- Klimaschutz sinkt von rund 40 % auf 27 %.
+- Klimakrise bleibt mit etwa 21 % weitgehend stabil.
 
-Die quartalweise Betrachtung offenbart einen überraschenden Trend: Entgegen der internationalen Erwartung (Schäfer et al., 2023), die einen Anstieg alarmistischer Begriffe seit 2019 konstatiert, zeigen unsere DACH-Daten ein anderes Bild.
+![Grafik 1: Zeitliche Entwicklung](../code_generated/grafik_1_zeitliche_entwicklung.png)
 
-**Zentrale Befunde:**
+*Abbildung 1: Quartalsweise relative Anteile der drei häufigsten Klima-Komposita (2022-2025).*
 
-- **Klimawandel** (neutral): **Anstieg** von 39 % auf 52 % (+13 Prozentpunkte)
-- **Klimaschutz** (handlungsorientiert): **Rückgang** von 40 % auf 27 % (−13 Prozentpunkte)
-- **Klimakrise** (alarmistisch): **Stabil** bei rund 21 % (±2 Prozentpunkte)
+### 3.3 Neutral versus alarmistisch
 
-![Grafik 1: Zeitliche Entwicklung der Klima-Begriffe](../code_generated/grafik_1_zeitliche_entwicklung.png)
+Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich das Verhältnis von Klimawandel (neutral) zu Klimakrise (alarmistisch) betrachtet. Im Vergleich dieser beiden Begriffe verschiebt sich der Anteil zugunsten neutraler Bezeichnungen:
 
-*Abbildung 2: Relative Anteile der Klima-Begriffe im Zeitverlauf (quartalweise, 2022–2025). Der neutrale Begriff „Klimawandel" gewinnt kontinuierlich an Bedeutung, während „Klimaschutz" anteilig abnimmt.*
+- Erstes Quartal im Analysefenster: 65,0 % neutral, 35,0 % alarmistisch
+- Letztes Quartal im Analysefenster: 71,4 % neutral, 28,6 % alarmistisch
 
-### **3.3 Neutral vs. Alarmistisch**
+![Grafik 2: Neutral versus alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
 
-Um die Ergebnisse im Kontext internationaler Studien einzuordnen, wurde zusätzlich die Gegenüberstellung von *neutralen* (Klimawandel) und *alarmistischen* (Klimakrise) Begriffen analysiert. Die handlungsorientierte Kategorie Klimaschutz wurde dabei ausgelassen, um einen direkten Vergleich mit der Methodik von Schäfer et al. (2023) zu ermöglichen.
+*Abbildung 2: Entwicklung der Anteile neutraler und alarmistischer Begriffe im Zeitverlauf.*
 
-**Ergebnis:** Das Verhältnis neutral zu alarmistisch verschob sich im Beobachtungszeitraum zugunsten der neutralen Terminologie:
+### 3.4 Kernergebnis
 
-- **Q2 2022**: Neutral 65 % / Alarmistisch 35 %
-- **Q4 2024**: Neutral 71 % / Alarmistisch 29 %
+Die Daten zeigen im Beobachtungszeitraum keinen ausgeprägten Aufwärtstrend für den alarmistischen Kernbegriff Klimakrise. Gleichzeitig nimmt der Anteil des neutralen Begriffs Klimawandel innerhalb des Top-3-Sets zu. Für den untersuchten DACH-Ausschnitt ist dies vereinbar mit einer relativen Stabilität alarmistischer Sprache bei gleichzeitiger Neuorientierung hin zu neutral-deskriptiver Terminologie.
 
-![Grafik 2: Neutral vs. Alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
+## 4. Diskussion
 
-*Abbildung 3: Anteil neutraler vs. alarmistischer Begriffe im Zeitverlauf. Die neutrale Terminologie dominiert zunehmend.*
+### 4.1 Einordnung im Literaturkontext
 
-### **3.4 Zusammenfassung der Befunde**
+Die Befunde ergänzen internationale Studien durch eine regionale Perspektive. Schäfer et al. (2023) beschreiben international einen starken Zuwachs alarmistischer Labels seit 2019. In den hier untersuchten deutschsprachigen Titelseiten von 2022 bis 2025 zeigt sich dagegen keine Fortsetzung dieses Musters. Diese Abweichung bedeutet keinen Widerspruch im strengen Sinn, sondern verweist auf unterschiedliche Untersuchungsfenster, Samples und nationale Medienlogiken (Lück et al., 2018).
 
-Die quantitative Analyse ergibt ein Bild, das der internationalen Literatur widerspricht:
+### 4.2 Interpretation der drei Trends
 
-| Erwartung (internationale Literatur) | Unsere Befunde (DACH 2022–2025) |
-|-------------------------------------|----------------------------------|
-| Anstieg „Klimakrise" seit 2019 | Klimakrise stabil (~21 %) |
-| Rückgang „Klimawandel" | Klimawandel steigt (39 % → 52 %) |
-| Shift zu alarmistischer Sprache | Kein Shift – neutral dominiert zunehmend |
+Erstens bleibt Klimakrise im Zeitverlauf weitgehend stabil. Das liefert im untersuchten Zeitraum keinen Hinweis auf eine fortlaufende Eskalation der Krisenrhetorik.
 
-Ein **besonders bemerkenswerter Befund** ist der Rückgang von *Klimaschutz*: Der handlungsorientierte Begriff verliert anteilig an Bedeutung, während die Zustandsbeschreibung (*Klimawandel*) an Präsenz gewinnt. Dies könnte auf eine Verschiebung des medialen Fokus von Maßnahmen hin zur Problemdiagnose hindeuten.
+Zweitens steigt Klimawandel deutlich. Das kann auf sprachliche Normalisierung, redaktionelle Standardisierung oder strategische Anschlussfähigkeit an ein breiteres Publikum hindeuten. Eine plausible, aber hier nicht getestete Erklärung ist eine stärkere Orientierung an anschlussfähigen Standardbegriffen.
 
-## **Diskussion**
+Drittens sinkt Klimaschutz relativ stark. Das deutet auf eine Verschiebung von lösungsbezogenen Begriffen zu problembeschreibenden Begriffen hin. Diese Entwicklung ist relevant, weil Kommunikationsforschung zeigt, dass Frame-Wirkungen je nach Problem- versus Handlungsfokus unterschiedlich ausfallen können (Feldman & Hart, 2021; Stoknes, 2014).
 
-Die Ergebnisse dieser Studie zeigen ein überraschendes Bild: Entgegen der internationalen Forschungslage (Schäfer et al., 2023), die seit 2019 einen deutlichen Anstieg alarmistischer Begriffe wie „climate crisis" in angloamerikanischen Medien dokumentiert, zeichnet sich für den deutschsprachigen Raum eine gegenläufige Entwicklung ab.
+### 4.3 Was sich aus den Daten sagen lässt und was nicht
 
-### Interpretation der Befunde
+Die Arbeit erlaubt robuste deskriptive Aussagen zur Begriffsverteilung auf Titelseiten im untersuchten Panel. Sie erlaubt keine kausalen Aussagen darüber, warum Redaktionen bestimmte Begriffe wählen. Aussagen wie Der Guardian war der alleinige Auslöser globaler Sprachverschiebungen wären daher zu stark. Plausibler ist eine Kombination aus redaktionellen Richtlinien, politischen Ereignissen und länderspezifischen Öffentlichkeiten (Carrington, 2019; McHugh et al., 2021).
 
-**1. Stabilität der „Klimakrise"**
+### 4.4 Handlungsempfehlungen
 
-Der alarmistische Begriff *Klimakrise* blieb über den gesamten Beobachtungszeitraum stabil bei etwa 21 % der Nennungen. Dies steht im Kontrast zur Guardian-Policy von 2019, die international eine Trendwende markierte. Deutschsprachige Redaktionen scheinen diesem Vorbild nicht in gleichem Maße gefolgt zu sein.
+1. Erweiterung auf Volltextdaten, um Titelseiten- und Artikelsprachgebrauch systematisch zu vergleichen.
+2. Ergänzung um quellen-spezifische Zeitreihen, um Unterschiede zwischen Medientypen sichtbar zu machen.
+3. Kombination mit qualitativer Redaktionsforschung, um Begriffsentscheidungen nachvollziehen zu können.
+4. Anschlussanalyse für 2025+, um zu prüfen, ob Stabilität von Klimakrise anhält oder kippt.
 
-**2. Anstieg von „Klimawandel"**
+## Anhang
 
-Der neutrale Begriff *Klimawandel* gewann von 39 % auf 52 % an Anteil. Dies könnte verschiedene Ursachen haben:
+Zusätzliche Grafiken und Detailtabellen werden im Anhang dokumentiert, darunter die reine absolute Häufigkeitsgrafik als Ergänzung zur Ergebnisdarstellung.
 
-- **Medienkulturelle Unterschiede**: Die DACH-Region pflegt traditionell eine sachlichere Berichterstattungskultur als etwa britische oder amerikanische Medien.
-- **Normalisierung des Themas**: Nach Jahren intensiver Klimaberichterstattung könnte eine sprachliche Normalisierung eingesetzt haben, bei der dringliche Begriffe seltener als nötig erachtet werden.
-- **Politischer Kontext**: Mit dem Amtsantritt der Ampel-Regierung (Dezember 2021) und der institutionellen Verankerung von Klimaschutz könnte die „Krisen-Rhetorik" an Dringlichkeit verloren haben.
+## Quellenverzeichnis
 
-**3. Rückgang von „Klimaschutz"**
+Carrington, D. (2019, 17. Mai). Why the Guardian is changing the language it uses about the environment. The Guardian. https://www.theguardian.com/environment/2019/may/17/why-the-guardian-is-changing-the-language-it-uses-about-the-environment
 
-Der handlungsorientierte Begriff *Klimaschutz* sank von 40 % auf 27 %. Dies ist ein bemerkenswerter Befund: Während die Zustandsbeschreibung (*Klimawandel*) zunimmt, nimmt die Maßnahmenorientierung (*Klimaschutz*) ab. Mögliche Erklärungen:
+Duden. (2025a). Klimawandel. https://www.duden.de/rechtschreibung/Klimawandel
 
-- **Themenwechsel**: Der mediale Fokus könnte sich von konkreten Schutzmaßnahmen hin zu globalen Problemdiagnosen verschoben haben.
-- **Ermüdungseffekt**: Jahrelange Debatte über Klimaschutzmaßnahmen könnte zu einer gewissen „Themenermüdung" geführt haben.
-- **Politische Kontroversen**: Kontroversen um Gebäudeenergiegesetz und andere Maßnahmen könnten den Begriff „Klimaschutz" belastet haben.
+Duden. (2025b). Klimakrise. https://www.duden.de/rechtschreibung/Klimakrise
 
-### Rückbezug zur Einleitung
+Duden. (2025c). Klimaschutz. https://www.duden.de/rechtschreibung/Klimaschutz
 
-Die eingangs gestellte Forschungsfrage lautete: *Wie hat sich die Verwendung der häufigsten Begriffe mit dem Wortstamm „Klima" auf deutschsprachigen Online-Titelseiten zwischen 2021 und 2025 entwickelt?*
+Entman, R. M. (1993). Framing: Toward clarification of a fractured paradigm. Journal of Communication, 43(4), 51-58. https://doi.org/10.1111/j.1460-2466.1993.tb01304.x
 
-Die Antwort fällt differenzierter aus als erwartet: Statt eines Shifts zu alarmistischer Sprache zeigt sich eine **Rückkehr zur neutralen Terminologie**. Die Hypothese, dass sich internationale Trends auch im DACH-Raum niederschlagen, wurde durch unsere Daten nicht bestätigt.
+Feldman, L. A., & Hart, P. S. (2021). Upping the ante? The effects of emergency and crisis framing in climate change news. Climatic Change, 169, 31. https://doi.org/10.1007/s10584-021-03219-5
 
-### Limitationen
+Haueis, P. (2024). Climate concepts for supporting political goals of mitigation and adaptation: The case for climate crisis. WIREs Climate Change, 15(5), e893. https://doi.org/10.1002/wcc.893
 
-Die Aussagekraft dieser Studie unterliegt Einschränkungen:
+IPCC. (2023). AR6 synthesis report: Climate change 2023. https://www.ipcc.ch/2023/03/20/press-release-ar6-synthesis-report/
 
-1. **Zeitliche Abdeckung**: Der stabile Analysezeitraum beginnt erst im April 2022, sodass frühere Entwicklungen nicht erfasst werden.
-2. **Medienauswahl**: Die Scraper-Auswahl repräsentiert nicht das gesamte Medienspektrum; Boulevardmedien und regionale Presse sind unterrepräsentiert.
-3. **Nur Titelseiten**: Die Analyse erfasst ausschließlich Titelseiten-Auftritte, nicht das gesamte Nachrichtenangebot.
+Lück, J., Wozniak, A., & Wessler, H. (2018). Counterbalancing global media frames with nationally colored narratives: A comparative study of news narratives and news framing in the climate change coverage of five countries. Journalism, 19(12), 1635-1656. https://doi.org/10.1177/1464884916680372
 
-### Handlungsempfehlungen
+McHugh, L. H., Lemos, M. C., & Morrison, T. H. (2021). Risk? Crisis? Emergency? Implications of the new climate emergency framing for governance and policy. WIREs Climate Change, 12(6), e736. https://doi.org/10.1002/wcc.736
 
-Für künftige Forschung und mediale Praxis ergeben sich folgende Ansatzpunkte:
+Schäfer, M. S., Hase, V., Mahl, D., & Krayss, X. (2023). From climate change to climate crisis? Bergen Language and Linguistics Studies, 13(1), 161-183. https://doi.org/10.15845/bells.v13i1.3980
 
-1. **Erweiterte Korpusanalysen**: Ergänzung um Volltext-Analysen, um die Verwendung im Kontext zu erfassen.
-2. **Qualitative Vertiefung**: Experteninterviews mit Redaktionen könnten Aufschluss über bewusste Sprachpolitik geben.
-3. **Ländervergleich**: Ein systematischer Vergleich zwischen DACH-Medien und internationalen Quellen wäre aufschlussreich.
-4. **Sensibilisierung für Sprachwahl**: Medien sollten sich der Wirkung ihrer Wortwahl bewusst sein, da Begriffe wie „Krise" oder „Wandel" unterschiedliche Dringlichkeit signalisieren (vgl. Feldman & Hart, 2021).
-
-## **Anhang**
-
-*Weitere Grafiken und detaillierte Auswertungen befinden sich im Anhang.*
-
-## **Quellen**
-
-\[1\]	K. R. Raghavendran and A. Elragal, “Low-Code machine learning platforms: A fastlane to digitalization,” *Informatics*, vol. 10, no. 2, p. 50, Jun. 2023, doi: 10.3390/informatics10020050.
-
-\[2\]	S. Brauner, M. Murawski, and M. Bick, “The development of a competence framework for artificial intelligence professionals using probabilistic topic modelling,” *Journal of Enterprise Information Management*, vol. 38, no. 1, pp. 197–218, Mar. 2023, doi: 10.1108/jeim-09-2022-0341.
+Stoknes, P. E. (2014). Rethinking climate communications and the climate crisis: A public health perspective. Energy Research & Social Science, 1, 161-170. https://doi.org/10.1016/j.erss.2014.03.007
 
