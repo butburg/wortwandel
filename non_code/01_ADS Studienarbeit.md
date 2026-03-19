@@ -71,7 +71,7 @@ Analysiert werden die drei häufigsten Klima-Komposita der Datenbasis:
 - Klimaschutz als handlungsorientierter Begriff
 - Klimakrise als alarmistischer Begriff
 
-Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c). Die Kategorie neutral-deskriptiv wird im Folgenden kurz als neutral bezeichnet.
+Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c).
 
 Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer den drei Zielbegriffen Klimawandel, Klimaschutz und Klimakrise zugeordnet. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv und enthält keine inferenzstatistischen Signifikanztests.
 
@@ -81,7 +81,7 @@ Die Auswertung umfasst drei Schritte:
 
 1. Absolute Häufigkeiten der drei Begriffe über den Gesamtzeitraum.
 2. Quartalsweise relative Anteile zur Trendbeobachtung.
-3. Vergleich neutral vs. alarmistisch als reduziertes Zwei-Kategorien-Setting (Klimawandel vs. Klimakrise), angelehnt an internationale Vergleichslogik.
+3. Vergleich neutral-deskriptiv vs. alarmistisch als reduziertes Zwei-Kategorien-Setting (Klimawandel vs. Klimakrise), angelehnt an internationale Vergleichslogik.
 
 Wichtiger Hinweis zum Nenner: Relative Anteile in Kapitel 3 beziehen sich auf die Summe der drei Zielbegriffe (Top-3-Set) und nicht auf alle im Korpus vorkommenden Klima-Komposita.
 
@@ -121,20 +121,20 @@ Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
 *Abbildung 1: Quartalsweise relative Anteile der drei häufigsten Klima-Komposita (2022-2025).*
 
-### 3.3 Neutral versus alarmistisch
+### 3.3 Neutral-deskriptiv versus alarmistisch
 
-Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich das Verhältnis von Klimawandel (neutral) zu Klimakrise (alarmistisch) betrachtet. Im Vergleich dieser beiden Begriffe verschiebt sich der Anteil zugunsten neutraler Bezeichnungen:
+Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich das Verhältnis von Klimawandel (neutral-deskriptiv) zu Klimakrise (alarmistisch) betrachtet. Im Vergleich dieser beiden Begriffe verschiebt sich der Anteil zugunsten neutral-deskriptiver Bezeichnungen:
 
-- Erstes Quartal im Analysefenster: 65,0 % neutral, 35,0 % alarmistisch
-- Letztes Quartal im Analysefenster: 71,4 % neutral, 28,6 % alarmistisch
+- Erstes Quartal im Analysefenster: 65,0 % neutral-deskriptiv, 35,0 % alarmistisch
+- Letztes Quartal im Analysefenster: 71,4 % neutral-deskriptiv, 28,6 % alarmistisch
 
-![Grafik 2: Neutral versus alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
+![Grafik 2: Neutral-deskriptiv versus alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
 
-*Abbildung 2: Entwicklung der Anteile neutraler und alarmistischer Begriffe im Zeitverlauf.*
+*Abbildung 2: Entwicklung der Anteile neutral-deskriptiver und alarmistischer Begriffe im Zeitverlauf.*
 
 ### 3.4 Kernergebnis
 
-Die Daten zeigen im Beobachtungszeitraum keinen ausgeprägten Aufwärtstrend für den alarmistischen Kernbegriff Klimakrise. Gleichzeitig nimmt der Anteil des neutralen Begriffs Klimawandel innerhalb des Top-3-Sets zu. Für den untersuchten DACH-Ausschnitt ist dies vereinbar mit einer relativen Stabilität alarmistischer Sprache bei gleichzeitiger Neuorientierung hin zu neutral-deskriptiver Terminologie.
+Die Daten zeigen im Beobachtungszeitraum keinen ausgeprägten Aufwärtstrend für den alarmistischen Kernbegriff Klimakrise. Gleichzeitig nimmt der Anteil des neutral-deskriptiven Begriffs Klimawandel innerhalb des Top-3-Sets zu. Für den untersuchten DACH-Ausschnitt ist dies vereinbar mit einer relativen Stabilität alarmistischer Sprache bei gleichzeitiger Neuorientierung hin zu neutral-deskriptiver Terminologie.
 
 ## 4. Diskussion
 
