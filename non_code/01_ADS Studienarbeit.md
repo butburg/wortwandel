@@ -61,7 +61,7 @@ Diese Trennung erlaubt eine methodisch wichtige Unterscheidung zwischen echten N
 
 ### 2.2 Analysezeitraum und struktureller Bruch
 
-Die Coverage-Prüfung zeigt einen strukturellen Einschnitt am 21.04.2022 durch eine Änderung der Scraper-Architektur und des Quellenpanels. Um verzerrte Vorher-Nachher-Vergleiche zu vermeiden, basiert die quantitative Hauptauswertung auf dem stabileren Zeitraum vom 21.04.2022 bis 31.01.2025. Dieser Zeitraum umfasst 1.017 Kalendertage. Für diesen Zeitraum liegen Daten von 45 Medienquellen vor.
+Die Coverage-Prüfung zeigt einen strukturellen Einschnitt am 21.04.2022 durch eine Änderung der Scraper-Architektur und des Quellenpanels. Um verzerrte Vorher-Nachher-Vergleiche zu vermeiden, basiert die quantitative Hauptauswertung auf dem stabileren Zeitraum vom 21.04.2022 bis 31.01.2025. Dieser Zeitraum umfasst 1.017 Kalendertage. Für diesen Zeitraum liegen Daten von 46 Medienquellen vor.
 
 ### 2.3 Begriffsauswahl und Kategorisierung
 
@@ -73,7 +73,7 @@ Analysiert werden die drei häufigsten Klima-Komposita der Datenbasis:
 
 Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c).
 
-Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer den drei Zielbegriffen Klimawandel, Klimaschutz und Klimakrise zugeordnet. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv und enthält keine inferenzstatistischen Signifikanztests.
+Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer über einfache Präfixregeln den drei Zielbegriffen zugeordnet: wandel*, krise* und schutz*. Dadurch werden beispielsweise Formen wie Wandel, Wandels, Krisen, Schutzabkommen oder Krisenabkommen konsistent erfasst. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv.
 
 ### 2.4 Auswertungsschritte
 
@@ -99,13 +99,13 @@ Die Aussagekraft der Analyse wird durch folgende Punkte begrenzt:
 
 ### 3.1 Gesamtverteilung
 
-Im Analysezeitraum (21.04.2022 bis 31.01.2025) wurden insgesamt 46.785 Nennungen der drei Zielbegriffe gezählt.
+Im Analysezeitraum (21.04.2022 bis 31.01.2025) wurden insgesamt 42.540 Nennungen der drei Zielbegriffe gezählt.
 
 | Begriff | Absolute Häufigkeit | Relativer Anteil |
 |---------|--------------------:|----------------:|
-| Klimawandel | 21.542 | 46,04 % |
-| Klimaschutz | 14.663 | 31,34 % |
-| Klimakrise | 10.580 | 22,61 % |
+| Klimawandel | 19.918 | 46,82 % |
+| Klimaschutz | 13.390 | 31,48 % |
+| Klimakrise | 9.232 | 21,70 % |
 
 Der am häufigsten verwendete Begriff ist Klimawandel. Klimakrise bleibt mit gut einem Fünftel der Nennungen deutlich dahinter.
 
@@ -113,9 +113,9 @@ Der am häufigsten verwendete Begriff ist Klimawandel. Klimakrise bleibt mit gut
 
 Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
-- Klimawandel steigt von rund 39 % auf 52 %.
-- Klimaschutz sinkt von rund 40 % auf 27 %.
-- Klimakrise bleibt mit etwa 21 % weitgehend stabil.
+- Klimawandel steigt von rund 39 % auf 53 %.
+- Klimaschutz sinkt von rund 41 % auf 27 %.
+- Klimakrise bleibt im Bereich von rund 20 % bis 22 % weitgehend stabil.
 
 ![Grafik 1: Zeitliche Entwicklung](../code_generated/grafik_1_zeitliche_entwicklung.png)
 
@@ -125,8 +125,8 @@ Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
 Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich das Verhältnis von Klimawandel (neutral-deskriptiv) zu Klimakrise (alarmistisch) betrachtet. Im Vergleich dieser beiden Begriffe verschiebt sich der Anteil zugunsten neutral-deskriptiver Bezeichnungen:
 
-- Erstes Quartal im Analysefenster: 65,0 % neutral-deskriptiv, 35,0 % alarmistisch
-- Letztes Quartal im Analysefenster: 71,4 % neutral-deskriptiv, 28,6 % alarmistisch
+- Erstes Quartal im Analysefenster: 66,4 % neutral-deskriptiv, 33,6 % alarmistisch
+- Letztes Quartal im Analysefenster: 72,7 % neutral-deskriptiv, 27,3 % alarmistisch
 
 ![Grafik 2: Neutral-deskriptiv versus alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
 
