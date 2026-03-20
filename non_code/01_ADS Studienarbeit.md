@@ -117,7 +117,7 @@ Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 - Klimaschutz sinkt von rund 41 % auf 27 %.
 - Klimakrise bleibt im Bereich von rund 20 % bis 22 % weitgehend stabil.
 
-![Grafik 1: Zeitliche Entwicklung](../code_generated/grafik_1_zeitliche_entwicklung.png)
+![Grafik 1: Zeitliche Entwicklung](../data_output/plots/grafik_1_zeitliche_entwicklung.png)
 
 *Abbildung 1: Quartalsweise relative Anteile der drei häufigsten Klima-Komposita (2022-2025).*
 
@@ -128,7 +128,7 @@ Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich d
 - Erstes Quartal im Analysefenster: 66,4 % neutral-deskriptiv, 33,6 % alarmistisch
 - Letztes Quartal im Analysefenster: 72,7 % neutral-deskriptiv, 27,3 % alarmistisch
 
-![Grafik 2: Neutral-deskriptiv versus alarmistisch](../code_generated/grafik_2b_neutral_vs_alarmistisch_linien.png)
+![Grafik 2: Neutral-deskriptiv versus alarmistisch](../data_output/plots/grafik_2b_neutral_vs_alarmistisch_linien.png)
 
 *Abbildung 2: Entwicklung der Anteile neutral-deskriptiver und alarmistischer Begriffe im Zeitverlauf.*
 

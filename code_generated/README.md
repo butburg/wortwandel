@@ -5,15 +5,23 @@ Dieser Ordner speichert alle Jupyter Notebooks und generierten Analysen für die
 
 ## Struktur & Benennungskonvention
 
-Jedes Notebook hat einen klaren Fokus:
 
-- `01_Daten_Exploration.ipynb` – Erste Daten-Struktur, Häufigkeiten, Überblick
-- `02_Häufigkeiten_Trends.ipynb` – Analyse der Häufigkeiten, Zeitreihen
-- `03_Medien_Vergleiche.ipynb` – Unterschiede zwischen Medien
-- `04_Datenqualität.ipynb` – Scraper-Probleme, Lücken, Status-Codes
-- etc.
 
-**Nummerierung**: Hilft dem Student-Agent, die Reihenfolge zu verstehen
+Jedes Notebook hat einen klaren Fokus.
+**Nummerierung**: Hilft dem Student-Agent, die Reihenfolge zu verstehen.
+
+Aktuelle Reihenfolge in diesem Ordner und der Fokus:
+
+- `01_lake_to_dwh.ipynb` - FOKUS HIER EINSETZEN
+- `02_experiment_eda.ipynb`
+- `03_Datenqualität_Nullen.ipynb`
+- `04_Processing.ipynb`
+- `05_Datenbasis_EDA.ipynb`
+- `06_Klima_Begriffe_Analyse.ipynb`
+- `07_optional_Vergleich_Exact_vs_Lemma.ipynb` (optional)
+- `08_optional_Suffix_EDA.ipynb` (optional)
+
+Kernlauf fuer die Studienarbeit: `01` bis `06`.
 
 ## Code-Stil (WICHTIG!)
 
@@ -45,6 +53,13 @@ df = hdp.load_data(...)
 - [Befund 2]
 - Qualitäts-Hinweise: [Lücken, Probleme]
 ```
+
+## Datenzugriffskonvention
+
+- Primäre Datenquelle ist `data_output/dwh_data.db`.
+- Notebook-Inputs sollen aus der DB kommen, nicht aus `pd.read_csv(...)` fuer Kernanalysen.
+- CSV-Exports bleiben erlaubt als optionaler Output.
+- Keine generischen Spalten-Kandidatenlogik in stabilen Kernnotebooks, klare erwartete Spaltennamen verwenden.
 
 ## Was wird hier gemacht?
 

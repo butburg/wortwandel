@@ -1,6 +1,6 @@
 # Projekt-Übersicht: Klima-Komposita Studienarbeit
 
-**Stand**: 12. Februar 2026
+**Stand**: 20. Maerz 2026
 **Titel**: "Klima-Komposita auf deutschsprachigen Online-Titelseiten: Eine Analyse des Begriffswandels 2021–2025"
 
 ---
@@ -102,20 +102,21 @@ User (direkt)
 ### Datenqualität
 - Nicht alle Zeitungen haben vollständige Coverage ab 21.04.2022
 - Lücken durch Scraper-Fehler, Server-Ausfälle, etc.
-- Coverage-Analyse in [code_generated/02_Datenqualität_Nullen.ipynb](code_generated/02_Datenqualit%C3%A4t_Nullen.ipynb)
+- Coverage-Analyse in [code_generated/03_Datenqualität_Nullen.ipynb](code_generated/03_Datenqualit%C3%A4t_Nullen.ipynb)
 
 ---
 
 ## 📝 Workflow der Studienarbeit
 
-### Phase 1: Datenanalyse (Code-Agent führt aus)
-1. ✅ **Datenbasis verstehen** ([code_generated/01_Datenbasis_EDA.ipynb](code_generated/01_Datenbasis_EDA.ipynb))
-2. ✅ **Datenqualität prüfen** ([code_generated/02_Datenqualität_Nullen.ipynb](code_generated/02_Datenqualit%C3%A4t_Nullen.ipynb))
+
+### Allgemein
+1. Datenbasis verstehen
+2. Datenqualität prüfen
    - Coverage-Analyse ab 21.04.2022
    - Nullen-Visualisierung (Blau=Klima, Grau=kein Klima, Weiß=Lücke)
    - Welche Zeitungen haben >90% Coverage?
 
-3. 🔄 **Daten filtern** (nächster Schritt)
+3. 🔄 Daten filtern (nächster Schritt)
    - Nur ab 21.04.2022
    - Nur deutsche Zeitungen (keine englischen wie BBC, CNN)
    - Nur Zeitungen mit >90% Coverage
@@ -123,11 +124,53 @@ User (direkt)
 
 4. 🔄 **Suffix-Analyse** (folgt)
    - Häufigste deutsche Klima-Komposita
-   - Sollte zeigen: Klimaschutz, Klimawandel, Klimakrise (Top 3 oder mehr)
+   - Sollte zeigen: Klimaschutz, Klimawandel, Klimakrise (Top 3)
 
 5. 🔄 **Trend-Analyse** (folgt)
    - Zeitverlauf ab 21.04.2022
-   - Grafik mit 3 oder mehr Linien: Klimaschutz, Klimawandel, Klimakrise
+   - Grafik mit 3 Linien: Klimaschutz, Klimawandel, Klimakrise
+
+
+### Pipeline 01 bis 06 (Kern) + 07/08 (optional)
+
+1. **01_lake_to_dwh**
+   - Datei: [code_generated/01_lake_to_dwh.ipynb](code_generated/01_lake_to_dwh.ipynb)
+   - Aufgabe: Rohdaten aus data lake in `data_output/dwh_data.db` schreiben (`newspapers`, `context`)
+
+2. **02_experiment_eda**
+   - Datei: [code_generated/02_experiment_eda.ipynb](code_generated/02_experiment_eda.ipynb)
+   - Aufgabe: Explorative Voranalyse auf Bronze-Daten, Grundlage fuer spaetere Processing-Entscheidungen
+
+3. **03_Datenqualität_Nullen**
+   - Datei: [code_generated/03_Datenqualität_Nullen.ipynb](code_generated/03_Datenqualit%C3%A4t_Nullen.ipynb)
+   - Aufgabe: Qualitaetsanalyse frueh im Prozess (Nullen, Luecken, Coverage)
+
+4. **04_Processing**
+   - Datei: [code_generated/04_Processing.ipynb](code_generated/04_Processing.ipynb)
+   - Aufgabe: Feature-Erweiterungen und Normalisierung (u.a. `suffix_lemma`) in `*_processed`
+   - Persistenz: weiterhin in derselben DB (`dwh_data.db`) als neue Tabellen `newspapers_processed`, `context_processed`
+
+5. **05_Datenbasis_EDA**
+   - Datei: [code_generated/05_Datenbasis_EDA.ipynb](code_generated/05_Datenbasis_EDA.ipynb)
+   - Aufgabe: strukturierte EDA auf dem verarbeiteten Stand
+
+6. **06_Klima_Begriffe_Analyse**
+   - Datei: [code_generated/06_Klima_Begriffe_Analyse.ipynb](code_generated/06_Klima_Begriffe_Analyse.ipynb)
+   - Aufgabe: Hauptanalyse fuer die Arbeit, Grafikausgabe nach `data_output/plots`
+
+7. **07_optional_Vergleich_Exact_vs_Lemma** (optional)
+   - Datei: [code_generated/07_optional_Vergleich_Exact_vs_Lemma.ipynb](code_generated/07_optional_Vergleich_Exact_vs_Lemma.ipynb)
+   - Aufgabe: Robustheitsvergleich (optional)
+
+8. **08_optional_Suffix_EDA** (optional)
+   - Datei: [code_generated/08_optional_Suffix_EDA.ipynb](code_generated/08_optional_Suffix_EDA.ipynb)
+   - Aufgabe: offene Suffix-Exploration (optional)
+
+### Datenzugriffskonvention
+- Primäre Datenquelle fuer Notebooks ist `data_output/dwh_data.db`.
+- `pd.read_csv(...)` fuer Kerninputs wird vermieden.
+- CSV-Dateien bleiben als optionale Exporte fuer Weitergabe/Anhang erlaubt.
+- Generische Spalten-Erkennung (`*_candidates`) in stabilen Kernnotebooks vermeiden, stattdessen klare erwartete Spalten nutzen.
 
 ### Phase 2: Recherche (Research-Agent führt aus)
 - ✅ Literatur zu Klima-Begriffsgebrauch gesammelt (8 Quellen)
@@ -170,12 +213,12 @@ User (direkt)
 - 🔄 Umfang (6-8 Seiten Hauptteil)
 
 **Aktueller Stand**:
-- Phase 1 läuft (Datenanalyse)
-- Notebooks 01 & 02 in [code_generated/](code_generated/) erstellt
+- Pipeline in [code_generated/](code_generated/) auf 01 bis 08 strukturiert
+- Kernlauf ist 01 bis 06, 07 und 08 sind optional
 - Research-Findings vorhanden (8 Quellen, Definitionen)
 - Finale Arbeit noch im Entwurfsstadium
 
 ---
 
-**Letzte Aktualisierung**: 12. Februar 2026
-**Nächster Schritt**: Daten-Filterung & Suffix-Analyse
+**Letzte Aktualisierung**: 20. Maerz 2026
+**Nächster Schritt**: Notebook-Code auf DB-only Input vereinheitlichen

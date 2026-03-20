@@ -28,6 +28,7 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 
 2. **Jupyter Notebooks anlegen** in [code_generated/](code_generated/):
    - NICHT in den vorhandenen Notebooks ([notebooks/](notebooks/)) arbeiten
+   - Aktuelle Reihenfolge beachten: `01` bis `06` Kern, `07` und `08` optional
    - Jedes Notebook hat einen klaren Fokus (z.B. `01_häufigkeiten.ipynb`, `02_trend_analyse.ipynb`)
    - Kleine, lesbare Zellen (10–20 Zeilen max.)
    - Erkenntnisse zusammenfassen am Ende jedes Notebooks
@@ -47,9 +48,16 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 ## Datenstruktur & Quellen
 
 **Verfügbare Daten**:
-- SQLite-Datenbank (falls vorhanden) oder CSV-Dateien im `/data_output/` oder `/data_input/data-lake_csv/`
+- SQLite-Datenbank `data_output/dwh_data.db` als primäre Quelle
+- CSV-Dateien nur als optionale Exporte oder fuer Anhang/Weitergabe
 - HTML-Rohdaten im `/data_input/data-lake/` (täglich gescrapte Titelseiten seit 2021)
 - Bereits erstellte Notebooks in [notebooks/](notebooks/) – siehe diese als **Ideen-Geber**, aber arbeite nicht darin!
+
+**Datenzugriff-Regel**:
+- Fuer Kernnotebooks keine `pd.read_csv(...)`-Inputs als Primärquelle verwenden.
+- Inputs aus der DB lesen (z.B. `newspapers`, `context`, `newspapers_processed`, `context_processed`).
+- Keine generische Kandidatenlogik fuer bekannte Spalten (z.B. `date_candidates`, `paper_candidates`, `id_candidates`) in stabilen Notebooks.
+- Klare, erwartete Spaltennamen verwenden.
 
 **Fokus-Begriffe** (was der Student braucht):
 - Der Student sagt dir, welche Begriffe er analysieren will
@@ -127,3 +135,4 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 4. **Transparenz**: Zeige Annahmen, Filter, Datenqualitäts-Hinweise
 5. **Einfachheit**: Default-Plots, klare Grafiken – jede Geschichte erzählt eine Botschaft
 6. **Fokus**: Du machst das, was der Student fordert – nicht mehr, nicht weniger
+7. **Lesbarkeit vor Generik**: Keine unnötigen Fallback-Konstrukte bei stabiler Datenstruktur
