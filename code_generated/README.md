@@ -12,14 +12,14 @@ Jedes Notebook hat einen klaren Fokus.
 
 Aktuelle Reihenfolge in diesem Ordner und der Fokus:
 
-- `01_lake_to_dwh.ipynb` - FOKUS HIER EINSETZEN
-- `02_experiment_eda.ipynb`
-- `03_Datenqualität_Nullen.ipynb`
-- `04_Processing.ipynb`
-- `05_Datenbasis_EDA.ipynb`
-- `06_Klima_Begriffe_Analyse.ipynb`
-- `07_optional_Vergleich_Exact_vs_Lemma.ipynb` (optional)
-- `08_optional_Suffix_EDA.ipynb` (optional)
+- `01_lake_to_dwh.ipynb` - Aufbau der Datenbasis: Rohdaten in SQLite-DWH ueberfuehren (`newspapers`, `context`).
+- `02_experiment_eda.ipynb` - Fruehe EDA auf Bronze-Daten: Struktur verstehen und Processing-Entscheidungen vorbereiten.
+- `03_Datenqualität_Nullen.ipynb` - Datenqualitaet und Coverage: Nullen, Luecken, Zeitungsabdeckung transparent machen.
+- `04_Processing.ipynb` - Aufbereitung und Feature-Building: bereinigte/erweiterte Tabellen `*_processed` erzeugen.
+- `05_Datenbasis_EDA.ipynb` - EDA auf verarbeitetem Stand: Plausibilitaet, Verteilungen und Analyse-Basis sichern.
+- `06_Klima_Begriffe_Analyse.ipynb` - Hauptanalyse der Arbeit: Trends und Kerngrafiken fuer Klima-Begriffe erzeugen.
+- `07_optional_Vergleich_Exact_vs_Lemma.ipynb` (optional) - Robustheitscheck: exakte Begriffe gegen Lemma-/Wildcard-Variante vergleichen.
+- `08_optional_Suffix_EDA.ipynb` (optional) - Offene Suffix-Exploration: neutrale Rangfolgen und Zeitmuster ohne feste Top-N-Vorgabe.
 
 Kernlauf fuer die Studienarbeit: `01` bis `06`.
 

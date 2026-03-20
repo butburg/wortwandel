@@ -59,6 +59,18 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 - Keine generische Kandidatenlogik fuer bekannte Spalten (z.B. `date_candidates`, `paper_candidates`, `id_candidates`) in stabilen Notebooks.
 - Klare, erwartete Spaltennamen verwenden.
 
+**Pfadstandard fuer alle Notebooks (verbindlich, wie 01_lake_to_dwh)**:
+- Setup immer ueber `notebook_dir` aufbauen:
+   - `notebook_dir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()`
+   - `sys.path.append(os.path.join(notebook_dir, "..", "pylib"))`
+- DB-Pfad immer so setzen:
+   - `db_path = os.path.join(notebook_dir, "..", "data_output", "dwh_data.db")`
+- Plot-Ausgabepfad immer so setzen:
+   - `plot_dir = os.path.join(notebook_dir, "..", "data_output", "plots")`
+   - `os.makedirs(plot_dir, exist_ok=True)`
+- Keine CWD-abhaengigen Basispfade verwenden (z.B. `BASE_PATH = os.path.dirname(os.getcwd())`, `Path.cwd()`-Fallbacks).
+- `savefig(...)`-Ziele immer in `plot_dir` schreiben, nicht in `code_generated/`.
+
 **Fokus-Begriffe** (was der Student braucht):
 - Der Student sagt dir, welche Begriffe er analysieren will
 - Richtwert: **Klimawandel** (neutral), **Klimakrise** (alarmistisch), **Klimaschutz** (handlungsorientiert)
