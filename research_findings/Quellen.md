@@ -200,3 +200,82 @@
 ---
 
 **Arbeitsauftrag erfüllt:** ✅ 3–10 Quellen gesammelt, lexikalische Definitionen vollständig
+
+---
+
+## Nachtrag: Verifizierte Zusatzquellen (Stand: 2026-02-12, Evidenz-Check)
+
+### Kernquellen-Audit (gewuenschter Kontrollblock)
+
+### Schäfer et al. (2023): From "Climate Change" to "Climate Crisis"?
+- DOI: https://doi.org/10.15845/bells.v13i1.3980
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Belastbare Claims:
+  - Automatisierte Inhaltsanalyse von 16 Medien in 8 Laendern (1996-2021; N = 89.887).
+  - Neutrale Labels dominieren weiterhin, alarmistische Labels steigen seit 2019 deutlich.
+
+### Feldman & Hart (2021): Upping the ante?
+- DOI: https://doi.org/10.1007/s10584-021-03219-5
+- Verifikationsstatus: nur Metadaten/Abstract verifiziert
+- Belastbare Claims (nur Abstract):
+  - Kein signifikanter Terminologie-Effekt auf Climate Engagement.
+  - "Climate emergency" reduziert wahrgenommene Glaubwuerdigkeit/Newsworthiness gegenueber "climate change".
+
+### McHugh et al. (2021): Risk? Crisis? Emergency?
+- DOI: https://doi.org/10.1002/wcc.736
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Belastbare Claims:
+  - Die Autorinnen verneinen eine einfache Ja/Nein-Antwort zur Wirksamkeit von "climate emergency".
+  - Es werden vier Policy-Pfade mit unterschiedlichen Governance-Folgen entwickelt.
+
+### Haueis (2024): Climate concepts for supporting political goals
+- DOI: https://doi.org/10.1002/wcc.893
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Belastbare Claims:
+  - Der Artikel entwickelt explizite epistemische und sozionormative Kriterien zur Begriffsbewertung.
+  - "Climate crisis" wird unter den geprueften Optionen als derzeit am geeignetsten fuer Mitigation/Adaptation eingeordnet.
+
+### Zusatzquellen (3-5), die Luecken schliessen
+
+### Lück et al. (2018): Counterbalancing global media frames with nationally colored narratives
+- DOI: https://doi.org/10.1177/1464884916680372
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Relevanz:
+  - Direkter Bezug zu Deutschland im Fuenf-Laender-Vergleich.
+  - Methodische Bruecke zwischen Frame- und Narrativanalyse fuer Medienvergleich.
+- Belastbare Claims:
+  - "Issue frames" konvergieren zwischen Laendern staerker als Narrative.
+  - Narrative bleiben deutlich national gefaerbt und sind fuer Landerunterschiede zentral.
+
+### Gurr & Metag (2023): What Leads to Audience Issue Fatigue?
+- DOI/Link: kein DOI im Datensatz; Journal-Link http://ijoc.org
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Relevanz:
+  - Verknuepft Paneldaten mit Inhaltsanalyse (Linkage-Design) und ist damit direkt methodisch anschlussfaehig.
+- Belastbare Claims:
+  - Wiederholung, Komplexitaet und Strategie-Framing foerdern Issue Fatigue.
+  - Reine Expositionsintensitaet/Negativitaet/Sensationalismus zeigen keinen signifikanten Effekt.
+
+### Morrison et al. (2018): Increasing belief but issue fatigue
+- DOI: https://doi.org/10.1371/journal.pone.0197988
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Relevanz:
+  - Erklaert, warum steigende Problemakzeptanz nicht automatisch zu steigender Alltagsaktivierung fuehrt.
+- Belastbare Claims:
+  - Klimabezogene Skepsis nimmt ab und mittlere Segmente wachsen.
+  - Parallel sinken bestimmte Aufmerksamkeits-/Kommunikationsindikatoren (Issue Fatigue).
+
+### Stoknes (2014): Rethinking climate communications and the psychological climate paradox
+- DOI: https://doi.org/10.1016/j.erss.2014.03.007
+- Verifikationsstatus: im PDF/Volltext verifiziert
+- Relevanz:
+  - Belastbarer theoretischer Unterbau fuer Framing- und Sprachwirkungsdiskussion.
+- Belastbare Claims:
+  - Das Defizitmodell (mehr Fakten reichen aus) wird als unzureichend kritisiert.
+  - Psychologische Barrieren koennen Wirkung selbst bei hoher Problemkenntnis begrenzen.
+
+### Kurzempfehlung fuer die Studienarbeit
+- Sofort aufnehmen: Lück et al. (2018), Gurr & Metag (2023), Morrison et al. (2018).
+- Vorsichtig formulieren: Feldman & Hart (2021), weil aktuell nur Abstract-verifiziert.
+- Diskussionsstark, aber nicht als Primarbeleg fuer Medientrends: Haueis (2024), da normativ-konzeptionell.
+

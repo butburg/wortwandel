@@ -224,3 +224,44 @@ die label auswhal können wir änhlich begründen wie in schäfer et al. hier so
 ---
 
 **Wichtig**: Alle Zitate sind ECHTE, nachprüfbare Quellen mit Links/Nachweisen. Keine erfundenen Zitate.
+
+---
+
+## Nachtrag: Verifizierte Direktzitate (Evidenz-Check)
+
+### Lück et al. (2018) - Volltext verifiziert
+"The issue-specific media framing appears to become increasingly homogeneous among countries due to globalized media discourse. Simultaneously, however, issue-specific narratives maintain and constitute country-specific imaginaries and world views in globalized media environments."
+
+- Quelle: Lück, Wozniak, Wessler (2018), International Journal of Press/Politics, https://doi.org/10.1177/1464884916680372
+- Verwendung: Einleitung/Diskussion (Landervergleich, Deutschlandbezug, Narrative)
+
+### Gurr & Metag (2023) - Volltext verifiziert
+"Issue fatigue appears to be induced by specific patterns in media reporting, namely repeated information, complexity, and strategy framing."
+
+- Quelle: Gurr & Metag (2023), International Journal of Communication, 17, 2967-2987, http://ijoc.org
+- Verwendung: Diskussion/Methodenbezug (welche Inhaltsmerkmale Fatigue plausibel erklaeren)
+
+### Morrison et al. (2018) - Volltext verifiziert
+"There has been little corresponding increase in those in the Alarmed segment. Alarm appears to have lessened, particularly among those who are less convinced and less engaged with climate change."
+
+- Quelle: Morrison et al. (2018), PLOS ONE, https://doi.org/10.1371/journal.pone.0197988
+- Verwendung: Diskussion (Akzeptanzanstieg ohne automatische Aktivierungssteigerung)
+
+### McHugh et al. (2021) - Volltext verifiziert
+"No straightforward answer can be provided regarding whether and under what circumstances the declaration of a climate emergency can contribute to effective climate policy and governance interventions."
+
+- Quelle: McHugh, Lemos, Morrison (2021), WIREs Climate Change, https://doi.org/10.1002/wcc.736
+- Verwendung: Diskussion (keine simple Pro/Contra-These zu Emergency-Framing)
+
+### Haueis (2024) - Volltext verifiziert
+"'Climate crisis' appears currently most suitable to formulate and pursue climate mitigation and adaptation goals."
+
+- Quelle: Haueis (2024), WIREs Climate Change, https://doi.org/10.1002/wcc.893
+- Verwendung: Diskussion (normative Konzeptwahl)
+
+### Feldman & Hart (2021) - nur Abstract verifiziert
+"Results showed no effect of terminology on climate change engagement, but 'climate emergency' reduced perceived news credibility and newsworthiness compared to 'climate change'."
+
+- Quelle: Feldman & Hart (2021), Climatic Change, https://doi.org/10.1007/s10584-021-03219-5
+- Verwendung: Diskussion mit Vorsicht (aktuell nur Abstract, kein Volltextabgleich)
+
