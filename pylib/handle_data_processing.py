@@ -1,10 +1,14 @@
 import os
 import logging
 import re
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 import multiprocessing
-from handle_sqlite import save_dataframe_to_db
-import pandas as pd
+from handle_sqlite import (
+    get_db_connection,
+    initialize_dwh_schema,
+    upsert_newspaper,
+    insert_context_rows,
+)
 
 
 # Set up logging
@@ -69,22 +73,30 @@ def process_newspaper_with_context(name, date, file_path, encoding, context_wind
         # clear non de entries before by checking in in <html lang="...">
         # all accesible website own a lang tag
         html_tag = bs.find("html")
-        lang = html_tag.get("lang", "") if html_tag else ""
+        lang = ""
+        if isinstance(html_tag, Tag):
+            lang_attr = html_tag.get("lang", "")
+            if isinstance(lang_attr, list):
+                lang = str(lang_attr[0]) if lang_attr else ""
+            else:
+                lang = str(lang_attr)
+
         if not lang.startswith("de"):
             logging.info(f"Skipping {name} ({date}) due to non-German language: {lang}")
             return None, None
 
         # Extract the body first to reduce unnecessary processing
         body = bs.body
+        words = []
         if not body:
             logging.warning(f"No body content found in {name} ({date}).")
+        else:
+            # Remove unwanted elements (script, style, etc.) to minimize processing
+            for tag in body(["script", "style", "noscript", "iframe", "meta", "link"]):
+                tag.decompose()  # Deletes tag and contents to save memory
 
-        # Remove unwanted elements (script, style, etc.) to minimize processing
-        for tag in body(["script", "style", "noscript", "iframe", "meta", "link"]):
-            tag.decompose()  # Deletes tag and contents to save memory
-
-        # Extract words efficiently. Format of stripped_string are phrases, splitting them to get words/token
-        words = [word for text in body.stripped_strings for word in text.split()]
+            # Extract words efficiently. Format of stripped_string are phrases, splitting them to get words/token
+            words = [word for text in body.stripped_strings for word in text.split()]
 
         # Extracts context, prefix, and suffix for each 'klima' mention found in the newspaper's content.
         klima_contexts = extract_context_and_wordparts(words, context_window)
@@ -124,51 +136,55 @@ def batch_process_newspapers(
     db_path="data_output/dwh_data.db",
     input_path_prefix="data_input",
 ):
-    """Processes newspapers in batches and saves results to DB with multiprocessing."""
-    metadata_collection = []
-    context_collection = []
-    newspaper_id_counter = 1
+    """Processes newspapers in batches and saves results to DB idempotently."""
 
     pool = multiprocessing.Pool(num_workers)
+    connection = get_db_connection(db_path)
+    cursor = connection.cursor()
+    initialize_dwh_schema(connection)
 
-    for i in range(0, len(newspapers), batch_size):
-        batch = newspapers[i : i + batch_size]  # Get the next batch
+    try:
+        for i in range(0, len(newspapers), batch_size):
+            batch = newspapers[i : i + batch_size]  # Get the next batch
 
-        results = pool.starmap(
-            process_newspaper_wrapper, [(news, input_path_prefix) for news in batch]
-        )
-
-        for metadata, context_data in results:
-            if metadata is None:
-                continue
-
-            metadata["newspaper_id"] = newspaper_id_counter
-            metadata_collection.append(metadata)
-
-            if metadata["klima_mentions_count"] > 0:
-                for context in context_data:
-                    context["newspaper_id"] = newspaper_id_counter
-                context_collection.extend(context_data)
-
-            newspaper_id_counter += 1
-
-        # Convert batch to DataFrame and save
-        if metadata_collection:
-            logging.info(
-                f"Processing at date {metadata_collection[-1].get("data_published", "Unknown Date")}."
+            results = pool.starmap(
+                process_newspaper_wrapper, [(news, input_path_prefix) for news in batch]
             )
-            final_metadata_df = pd.DataFrame(metadata_collection)
-            save_dataframe_to_db(
-                final_metadata_df, "newspapers", db_path=db_path, if_exists="append"
-            )
-            metadata_collection.clear()
 
-        if context_collection:
-            final_context_df = pd.DataFrame(context_collection)
-            save_dataframe_to_db(
-                final_context_df, "context", db_path=db_path, if_exists="append"
-            )
-            context_collection.clear()
+            last_date = "Unknown Date"
+            inserted_context_rows = 0
+            upserted_newspapers = 0
 
-    pool.close()
-    pool.join()
+            for metadata, context_data in results:
+                if metadata is None:
+                    continue
+
+                last_date = metadata.get("data_published", "Unknown Date")
+                newspaper_id, was_inserted = upsert_newspaper(
+                    cursor,
+                    metadata.get("newspaper_name", ""),
+                    metadata.get("data_published", ""),
+                    metadata.get("klima_mentions_count", 0),
+                )
+                upserted_newspapers += 1
+
+                # Import context only for newly inserted newspaper-day rows.
+                # Existing rows are considered already imported and are skipped.
+                if was_inserted and metadata.get("klima_mentions_count", 0) > 0:
+                    inserted_context_rows += insert_context_rows(
+                        cursor, newspaper_id, context_data or []
+                    )
+
+            connection.commit()
+            if upserted_newspapers > 0:
+                logging.info(
+                    "Processed batch up to %s: %s newspapers upserted, %s new context rows inserted.",
+                    last_date,
+                    upserted_newspapers,
+                    inserted_context_rows,
+                )
+    finally:
+        pool.close()
+        pool.join()
+        cursor.close()
+        connection.close()
