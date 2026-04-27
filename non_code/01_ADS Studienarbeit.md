@@ -95,6 +95,14 @@ Die Aussagekraft der Analyse wird durch folgende Punkte begrenzt:
 - Vergleichbarkeit: Der internationale Literaturvergleich ist inhaltlich, aber nicht vollständig methodengleich.
 - Statistische Unsicherheit: Es wurden keine Konfidenzintervalle oder formalen Trendtests berechnet.
 
+### 2.6 Qualitätssicherung der Importlogik
+
+Im Rahmen der Datenqualitaetspruefung wurde ein technischer Fehler in der urspruenglichen Importlogik identifiziert, der zu ueberhoehten Tageswerten fuehren konnte. Bei wiederholten ETL-Laeufen wurden bereits importierte Zeitung-Tag-Kombinationen teilweise erneut angehaengt. Dadurch konnten in nachgelagerten Merges kuenstliche Vervielfachungen entstehen. Die auffaellige Spitze im Februar 2025 war ein zentraler Anlass fuer diese Diagnose.
+
+Zur Behebung wurde die Importstrecke auf inkrementelles Verhalten umgestellt. Fuer die Tabelle newspapers wird eine eindeutige natuerliche Schluesselkombination aus newspaper_name und data_published verwendet. Existiert eine Kombination bereits, wird sie nicht erneut eingefuegt. Kontextdaten werden nur dann geschrieben, wenn die zugehoerige Zeitung-Tag-Kombination neu angelegt wurde. Damit bleiben Wiederholungslaeufe idempotent und fuehren nicht mehr zu einer erneuten Einspielung historischer Tage.
+
+Die Korrektur wurde mit automatisierten Tests auf Basis von pytest abgesichert. Geprueft wurden zwei fuer diese Arbeit zentrale Faelle: Erstens bleibt bei erneutem Import bereits vorhandener Tage die Anzahl der newspapers-Zeilen konstant. Zweitens fuehrt das Hinzufuegen eines bisher nicht vorhandenen Tages genau zu einem zusaetzlichen Eintrag in newspapers, waehrend sich die Kontexttabelle nur fuer diesen neuen Tag erhoeht.
+
 ## 3. Ergebnisse
 
 ### 3.1 Gesamtverteilung

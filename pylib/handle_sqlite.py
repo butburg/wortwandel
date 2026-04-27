@@ -4,7 +4,9 @@ import logging
 import os.path
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 
 def get_db_connection(db_path):
@@ -110,11 +112,21 @@ def insert_context_rows(cursor, newspaper_id, contexts):
 
     rows_to_insert = []
     for context in contexts:
-        pre_context = "" if context.get("pre_context") is None else str(context.get("pre_context"))
-        post_context = "" if context.get("post_context") is None else str(context.get("post_context"))
+        pre_context = (
+            ""
+            if context.get("pre_context") is None
+            else str(context.get("pre_context"))
+        )
+        post_context = (
+            ""
+            if context.get("post_context") is None
+            else str(context.get("post_context"))
+        )
         prefix = "" if context.get("prefix") is None else str(context.get("prefix"))
         suffix = "" if context.get("suffix") is None else str(context.get("suffix"))
-        rows_to_insert.append((int(newspaper_id), pre_context, post_context, prefix, suffix))
+        rows_to_insert.append(
+            (int(newspaper_id), pre_context, post_context, prefix, suffix)
+        )
 
     if rows_to_insert:
         cursor.executemany(
@@ -167,7 +179,9 @@ def read_table_as_dataframe(table_name="data", db_path="dwh_data.db"):
     try:
         query = f"SELECT * FROM {table_name}"
         df = pd.read_sql_query(query, connection)
-        logging.info(f"Data read from table '{table_name}' in '{db_path}' successfully.")
+        logging.info(
+            f"Data read from table '{table_name}' in '{db_path}' successfully."
+        )
         return df
     except Exception as e:
         logging.error(f"Error reading table '{table_name}': {e}")
@@ -183,7 +197,9 @@ if __name__ == "__main__":
     df = pd.DataFrame(data)
 
     # Save the DataFrame to a table
-    save_dataframe_to_db(df, "example", db_path="example_handle_sqlite.db", if_exists="replace")
+    save_dataframe_to_db(
+        df, "example", db_path="example_handle_sqlite.db", if_exists="replace"
+    )
 
     # Read the table back into a DataFrame
     result_df = read_table_as_dataframe("example", db_path="example_handle_sqlite.db")

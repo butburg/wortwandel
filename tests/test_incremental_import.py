@@ -1,6 +1,8 @@
 import sqlite3
 from pathlib import Path
 
+import pytest
+
 import handle_data_processing as hdp
 
 
@@ -51,7 +53,10 @@ def test_incremental_import_only_appends_new_day(tmp_path, sequential_pool):
     day1_filename = "2025-01-01-source.html"
     day2_filename = "2025-01-02-source.html"
 
-    _write_html(input_dir / day1_filename, "Heute ist Klimawandel wichtig. Klimakrise betrifft alle.")
+    _write_html(
+        input_dir / day1_filename,
+        "Heute ist Klimawandel wichtig. Klimakrise betrifft alle.",
+    )
     _write_html(input_dir / day2_filename, "Klimaschutz ist notwendig.")
 
     db_path = tmp_path / "dwh_test.db"
