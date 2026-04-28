@@ -37,6 +37,16 @@ def _write_html(path: Path, body_text: str) -> None:
     path.write_text(html, encoding="utf-8")
 
 
+def _write_html_bytes(path: Path, body_text: str, encoding: str = "cp1252") -> None:
+    html = f"""<!doctype html>
+<html lang=\"de\">
+    <head><meta charset=\"utf-8\"><title>Test</title></head>
+    <body>{body_text}</body>
+</html>
+"""
+    path.write_bytes(html.encode(encoding))
+
+
 def _count_rows(db_path: Path, table: str) -> int:
     conn = sqlite3.connect(str(db_path))
     try:
@@ -120,3 +130,36 @@ def test_incremental_import_only_appends_new_day(tmp_path, sequential_pool):
 
     assert newspapers_after_new_day == newspapers_after_first + 1
     assert context_after_new_day > context_after_first
+
+
+def test_import_handles_non_utf8_html(tmp_path, sequential_pool):
+    input_dir = tmp_path / "input"
+    input_dir.mkdir()
+
+    filename = "2021-10-07-dhv.html"
+    _write_html_bytes(
+        input_dir / filename,
+        '<div data-note="fluggelãndekarte">Klimakrise betrifft alle.</div>',
+        encoding="cp1252",
+    )
+
+    db_path = tmp_path / "dwh_test_non_utf8.db"
+    batch = [
+        {
+            "name": "dhv",
+            "date": "2021-10-07",
+            "file_name": filename,
+            "encoding": "utf-8",
+        }
+    ]
+
+    hdp.batch_process_newspapers(
+        newspapers=batch,
+        batch_size=1,
+        num_workers=1,
+        db_path=str(db_path),
+        input_path_prefix=str(input_dir),
+    )
+
+    assert _count_rows(db_path, "newspapers") == 1
+    assert _count_rows(db_path, "context") > 0

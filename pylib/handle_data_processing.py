@@ -21,11 +21,54 @@ KLIMA_PREFIX_SUFFIX = re.compile(r"(.*?)-?klima(?:-?(\w+))?", re.IGNORECASE)
 KLIMA_PART_MATCH = re.compile(r"\bklima(?:\w+|-?\w+)?\b", re.IGNORECASE)
 
 
-def read_html_file(filename, encoding="utf-8"):
+def read_html_file(filename, encoding="utf-8", fallback_encodings=("cp1252", "latin1")):
     """Reads the HTML file content after normalizing the file path."""
     filename = os.path.normpath(filename)
-    with open(filename, "r", encoding=encoding) as f:
-        return f.read()
+    with open(filename, "rb") as f:
+        raw = f.read()
+
+    encodings = []
+    if encoding:
+        encodings.append(encoding)
+    for fallback_encoding in fallback_encodings:
+        if fallback_encoding and fallback_encoding not in encodings:
+            encodings.append(fallback_encoding)
+
+    for current_encoding in encodings:
+        try:
+            text = raw.decode(current_encoding)
+            if current_encoding != encoding:
+                logging.info(
+                    "Decoded %s with fallback encoding %s after %s failed.",
+                    filename,
+                    current_encoding,
+                    encoding,
+                )
+            return text
+        except UnicodeDecodeError as exc:
+            bad_byte = raw[exc.start] if exc.start < len(raw) else None
+            if bad_byte is not None:
+                logging.warning(
+                    "Failed to decode %s with %s at byte 0x%02x (offset %s); retrying.",
+                    filename,
+                    current_encoding,
+                    bad_byte,
+                    exc.start,
+                )
+            else:
+                logging.warning(
+                    "Failed to decode %s with %s at offset %s; retrying.",
+                    filename,
+                    current_encoding,
+                    exc.start,
+                )
+
+    logging.warning(
+        "Falling back to replacement decoding for %s after encodings failed: %s",
+        filename,
+        ", ".join(encodings) or encoding or "utf-8",
+    )
+    return raw.decode(encoding or "utf-8", errors="replace")
 
 
 def get_context(words, index, context_window=3):
