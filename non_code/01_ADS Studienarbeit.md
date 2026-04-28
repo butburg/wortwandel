@@ -97,11 +97,11 @@ Die Aussagekraft der Analyse wird durch folgende Punkte begrenzt:
 
 ### 2.6 Qualitätssicherung der Importlogik
 
-Im Rahmen der Datenqualitaetspruefung wurde ein technischer Fehler in der urspruenglichen Importlogik identifiziert, der zu ueberhoehten Tageswerten fuehren konnte. Bei wiederholten ETL-Laeufen wurden bereits importierte Zeitung-Tag-Kombinationen teilweise erneut angehaengt. Dadurch konnten in nachgelagerten Merges kuenstliche Vervielfachungen entstehen. Die auffaellige Spitze im Februar 2025 war ein zentraler Anlass fuer diese Diagnose.
+Im Rahmen der Datenqualitätsprüfung wurde ein technischer Fehler in der ursprünglichen Importlogik identifiziert, der zu überhöhten Tageswerten führen konnte. Bei wiederholten ETL-Läufen wurden bereits importierte Zeitung-Tag-Kombinationen teilweise erneut angehängt. Dadurch konnten in nachgelagerten Merges künstliche Vervielfachungen entstehen. Die auffällige Spitze im Februar 2025 war ein zentraler Anlass für diese Diagnose.
 
-Zur Behebung wurde die Importstrecke auf inkrementelles Verhalten umgestellt. Fuer die Tabelle newspapers wird eine eindeutige natuerliche Schluesselkombination aus newspaper_name und data_published verwendet. Existiert eine Kombination bereits, wird sie nicht erneut eingefuegt. Kontextdaten werden nur dann geschrieben, wenn die zugehoerige Zeitung-Tag-Kombination neu angelegt wurde. Damit bleiben Wiederholungslaeufe idempotent und fuehren nicht mehr zu einer erneuten Einspielung historischer Tage.
+Zur Behebung wurde die Importstrecke auf inkrementelles Verhalten umgestellt. Für die Tabelle newspapers wird eine eindeutige natürliche Schlüsselkombination aus newspaper_name und data_published verwendet. Existiert eine Kombination bereits, wird sie nicht erneut eingefügt. Kontextdaten werden nur dann geschrieben, wenn die zugehörige Zeitung-Tag-Kombination neu angelegt wurde. Damit bleiben Wiederholungsläufe idempotent und führen nicht mehr zu einer erneuten Einspielung historischer Tage.
 
-Die Korrektur wurde mit automatisierten Tests auf Basis von pytest abgesichert. Geprueft wurden zwei fuer diese Arbeit zentrale Faelle: Erstens bleibt bei erneutem Import bereits vorhandener Tage die Anzahl der newspapers-Zeilen konstant. Zweitens fuehrt das Hinzufuegen eines bisher nicht vorhandenen Tages genau zu einem zusaetzlichen Eintrag in newspapers, waehrend sich die Kontexttabelle nur fuer diesen neuen Tag erhoeht.
+Die Korrektur wurde mit automatisierten Tests auf Basis von pytest abgesichert. Geprüft wurden zwei für diese Arbeit zentrale Fälle: Erstens bleibt bei erneutem Import bereits vorhandener Tage die Anzahl der Zeilen in newspapers konstant. Zweitens führt das Hinzufügen eines bisher nicht vorhandenen Tages genau zu einem zusätzlichen Eintrag in newspapers, während sich die Kontexttabelle nur für diesen neuen Tag erhöht.
 
 ## 3. Ergebnisse
 
