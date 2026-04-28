@@ -1,87 +1,44 @@
-# Code Generated - Notebooks & Analysen
+# Code Generated - Finale Analyse-Notebooks
 
-Dieser Ordner speichert alle Jupyter Notebooks und generierten Analysen für die Studienarbeit:
-**"Klima-Komposita auf deutschsprachigen Online-Titelseiten: Eine Analyse des Begriffswandels 2021–2025"**
+Dieser Ordner ist die **verbindliche Arbeitsflaeche** fuer die finale Abgabe der Studienarbeit:
+**"Klima-Komposita auf deutschsprachigen Online-Titelseiten: Eine Analyse des Begriffswandels 2021-2025"**
 
-## Struktur & Benennungskonvention
+## Zweck
 
+Hier liegen alle aktiv gepflegten Notebooks fuer:
+- ETL und Datenaufbereitung
+- Datenqualitaetsanalyse
+- Hauptanalyse und optionale Robustheitschecks
+- Diagnose- und Vergleichsnotebooks zur Dokumentation technischer Befunde
 
+Legacy-Notebooks wurden aus dem aktiven Bereich entfernt und ins Archiv verschoben:
+- `../archive/notebooks_legacy/from_folder/`
+- `../archive/notebooks_legacy/from_root/`
 
-Jedes Notebook hat einen klaren Fokus.
-**Nummerierung**: Hilft dem Student-Agent, die Reihenfolge zu verstehen.
+## Struktur und Reihenfolge
 
-Aktuelle Reihenfolge in diesem Ordner und der Fokus:
+- `01_lake_to_dwh.ipynb` - Rohdaten in `data_output/dwh_data.db` ueberfuehren (`newspapers`, `context`)
+- `02_experiment_eda.ipynb` - fruehe EDA auf Bronze-Daten
+- `03_Datenqualität_Nullen.ipynb` - Coverage-, Nullen- und Lueckenanalyse
+- `04_Datenbasis_EDA.ipynb` - strukturierte EDA auf der Datenbasis
+- `05_Processing.ipynb` - Aufbereitung und Build von `*_processed` Tabellen
+- `06_Klima_Begriffe_Analyse.ipynb` - Hauptanalyse und zentrale Visualisierungen
+- `07_optional_Vergleich_Exact_vs_Lemma.ipynb` - optionaler Robustheitsvergleich
+- `08_optional_Suffix_EDA.ipynb` - optionale Suffix-Exploration
+- `09_diagnose_Feb2025_Qualitaet.ipynb` - Datenqualitaetsdiagnose zur Feb-2025-Anomalie
+- `10_compare_faulty_vs_clean_db.ipynb` - Vergleich `faulty` vs `clean` Datenbank
 
-- `01_lake_to_dwh.ipynb` - Aufbau der Datenbasis: Rohdaten in SQLite-DWH ueberfuehren (`newspapers`, `context`).
-- `02_experiment_eda.ipynb` - Fruehe EDA auf Bronze-Daten: Struktur verstehen und Processing-Entscheidungen vorbereiten.
-- `03_Datenqualität_Nullen.ipynb` - Datenqualitaet und Coverage: Nullen, Luecken, Zeitungsabdeckung transparent machen.
-- `04_Processing.ipynb` - Aufbereitung und Feature-Building: bereinigte/erweiterte Tabellen `*_processed` erzeugen.
-- `05_Datenbasis_EDA.ipynb` - EDA auf verarbeitetem Stand: Plausibilitaet, Verteilungen und Analyse-Basis sichern.
-- `06_Klima_Begriffe_Analyse.ipynb` - Hauptanalyse der Arbeit: Trends und Kerngrafiken fuer Klima-Begriffe erzeugen.
-- `07_optional_Vergleich_Exact_vs_Lemma.ipynb` (optional) - Robustheitscheck: exakte Begriffe gegen Lemma-/Wildcard-Variante vergleichen.
-- `08_optional_Suffix_EDA.ipynb` (optional) - Offene Suffix-Exploration: neutrale Rangfolgen und Zeitmuster ohne feste Top-N-Vorgabe.
+Kernlauf fuer die Abgabe: `01` bis `06`.
 
-Kernlauf fuer die Studienarbeit: `01` bis `06`.
+## Konventionen
 
-## Code-Stil (WICHTIG!)
+- Primaere Datenquelle ist `../data_output/dwh_data.db`.
+- Kernanalysen laden Inputs aus der DB (nicht aus CSV als Primaerquelle).
+- CSV-Exporte sind als Artefakte erlaubt.
+- Kurze, nachvollziehbare Zellen mit klaren Zwischenschritten.
+- Wiederverwendbare Logik in `../pylib/` halten.
 
-1. **Kurze Zellen**: 10–20 Zeilen max. pro Zelle
-2. **klare Kommentare**: Was macht diese Zelle? Warum?
-3. **Default-Plots**: Nutze pandas/matplotlib Standard-Plots (nicht fancy/über-personalisiert)
-4. **PyLib nutzen**: Verwende [../pylib/handle_data_processing.py](../pylib/handle_data_processing.py) für Standard-Funktionen
-5. **Keine Copy-Paste**: Code sollte wiederverwertbar sein
+## Hinweis zur Abgabe
 
-## Notebook-Struktur
-
-```python
-# 1. Importe & Setup
-import pandas as pd
-import numpy as np
-from pylib import handle_data_processing as hdp
-
-# 2. Daten laden
-df = hdp.load_data(...)
-
-# 3. Analyse (kleine, fokussierte Schritte)
-# Zelle 1: Daten-Check
-# Zelle 2: Erste Berechnung
-# Zelle 3: Grafik erstellen
-
-# 4. Erkenntnisse am Ende
-## Erkenntnisse
-- [Befund 1]
-- [Befund 2]
-- Qualitäts-Hinweise: [Lücken, Probleme]
-```
-
-## Datenzugriffskonvention
-
-- Primäre Datenquelle ist `data_output/dwh_data.db`.
-- Notebook-Inputs sollen aus der DB kommen, nicht aus `pd.read_csv(...)` fuer Kernanalysen.
-- CSV-Exports bleiben erlaubt als optionaler Output.
-- Keine generischen Spalten-Kandidatenlogik in stabilen Kernnotebooks, klare erwartete Spaltennamen verwenden.
-
-## Was wird hier gemacht?
-
-- ✅ **Code & Analysen**: Der Code-Agent schreibt Python-Code für Student-Anforderungen
-- ✅ **Grafiken**: Schwarz-weiß, einfach, aussagekräftig
-- ✅ **Tabellen**: Für wichtige Zahlenergebnisse
-- ✅ **Datenqualitäts-Berichte**: Dokumentation von Lücken & Problemen
-- ❌ **Nicht**: Finale Textdokumente (=Student-Agent), Recherche (=Research-Agent)
-
-## Student-Agent & Code-Agent Workflow
-
-1. **Student sagt**: "Ich brauche eine Grafik mit Häufigkeiten der 3 Begriffe"
-2. **Code-Agent erstellt**: Neues Notebook oder aktualisiert Bestehendes
-3. **Code-Agent zeigt**: Grafik + Erkenntnisse im Notebook
-4. **Student-Agent schaut**: Sich das Notebook an und nutzt die Erkenntnisse für die Finaldokument
-
-## Wichtig
-
-- **Nicht** in [../notebooks/](../notebooks/) arbeiten (die sind Ideen-Geber, nicht Arbeitsfläche)
-- **Hier neue Analysen** erstellen und lagern
-- **Student-Agent schaut** sich die Notebooks an, **kopiert aber nicht einfach** – er nutzt die Erkenntnisse für seinen Text
-
----
-
-*Diese Notebooks sind Arbeitsdokumente – sie können refaktoriert/gelöscht werden, wenn die Arbeit fertig ist oder neue Analysen die alten ersetzen.*
+Dieser Ordner repraesentiert den aktuellen, abgaberelevanten Stand.
+Archivierte Notebooks sind nur noch Referenzmaterial und werden nicht weiter gepflegt.
