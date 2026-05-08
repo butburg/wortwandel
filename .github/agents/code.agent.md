@@ -55,7 +55,7 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 
 **Datenzugriff-Regel**:
 - Fuer Kernnotebooks keine `pd.read_csv(...)`-Inputs als Primärquelle verwenden.
-- Inputs aus der DB lesen (z.B. `newspapers`, `context`, `newspapers_processed`, `context_processed`).
+- Inputs aus der DB lesen (z.B. `newspapers`, `context`, `context_processed`).
 - Keine generische Kandidatenlogik fuer bekannte Spalten (z.B. `date_candidates`, `paper_candidates`, `id_candidates`) in stabilen Notebooks.
 - Klare, erwartete Spaltennamen verwenden.
 

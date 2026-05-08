@@ -1,6 +1,6 @@
 # Projekt-Uebersicht: Klima-Komposita Studienarbeit
 
-**Stand**: 28. April 2026  
+**Stand**: 28. April 2026
 **Titel**: "Klima-Komposita auf deutschsprachigen Online-Titelseiten: Eine Analyse des Begriffswandels 2021-2025"
 
 ---
@@ -9,7 +9,7 @@
 
 Studienarbeit im Rahmen von **ADSC11 Tools der Softwareentwicklung und Online-Daten** (Prof. Dr. Marcel Hebing).
 
-**Zentrale Forschungsfrage**:  
+**Zentrale Forschungsfrage**:
 *Wie hat sich die Verwendung der haeufigsten Begriffe mit dem Wortstamm "Klima" auf deutschsprachigen Online-Titelseiten zwischen 2021 und 2025 entwickelt?*
 
 **Fokus-Begriffe**: Klimawandel (neutral), Klimakrise (alarmistisch), Klimaschutz (handlungsorientiert)
@@ -39,7 +39,7 @@ wortwandel/
 └── PROJECT_OVERVIEW.md
 ```
 
-**Wichtig**: Der Ordner `code_generated/` ist jetzt der einzige aktive Notebook-Bereich.  
+**Wichtig**: Der Ordner `code_generated/` ist jetzt der einzige aktive Notebook-Bereich.
 Alte Notebooks wurden bewusst archiviert und werden nicht mehr weiterentwickelt.
 
 ---
@@ -79,7 +79,6 @@ Alte Notebooks wurden bewusst archiviert und werden nicht mehr weiterentwickelt.
 - `suffix`
 
 **Processed-Tabellen** (aus Pipeline-Schritt 05):
-- `newspapers_processed`
 - `context_processed`
 
 ---
