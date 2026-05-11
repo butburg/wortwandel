@@ -44,7 +44,7 @@ Für den deutschsprachigen Raum besteht hierzu weiterhin eine Lücke. Es liegen 
 
 Die zentrale Forschungsfrage lautet:
 
-**Wie hat sich die Verwendung der häufigsten Begriffe mit dem Wortstamm Klima auf deutschsprachigen Online-Titelseiten zwischen 2021 und 2025 entwickelt?**
+**Wie hat sich die Verwendung der häufigsten Begriffe mit dem Wortstamm Klima auf deutschsprachigen Online-Titelseiten in drei Jahren bis 2025 entwickelt?**
 
 Der Beitrag der Arbeit ist zweifach. Erstens liefert sie eine DACH-spezifische Anschlussanalyse zu internationalen Studien. Zweitens vergleicht sie neutral-deskriptive, handlungsorientierte und alarmistische Begriffe auf einer einheitlichen Datengrundlage und macht damit die Richtung des medialen Begriffswandels transparent.
 
@@ -52,7 +52,7 @@ Der Beitrag der Arbeit ist zweifach. Erstens liefert sie eine DACH-spezifische A
 
 ### 2.1 Datenbasis
 
-Die empirische Grundlage bilden eigene Scraper-Daten aus deutschsprachigen Online-Medien. Zwischen April 2021 und Januar 2025 wurden täglich um 09:00 Uhr Titelseiten automatisiert erfasst und in einer SQLite-basierten Datenstruktur gespeichert. Insgesamt umfasst das Rohpanel 47 Medienquellen. Für die Analyse wurden zwei Ebenen genutzt:
+Die empirische Grundlage bilden eigene Scraper-Daten aus ausgewählten deutschsprachigen Online-Medien. Zwischen April 2021 und Januar 2025 wurden täglich um 09:00 Uhr Titelseiten automatisiert erfasst und in einer SQLite-basierten Datenstruktur gespeichert. Insgesamt umfasst das Rohpanel 47 Medienquellen. Für die Analyse wurden zwei Ebenen genutzt:
 
 1. Metadaten je Crawl-Einheit, einschließlich Datum, Quelle und Klima-Nennungen.
 2. Kontextdaten mit den gefundenen Klima-Komposita und Textumgebung.
@@ -61,7 +61,11 @@ Diese Trennung erlaubt eine methodisch wichtige Unterscheidung zwischen echten N
 
 ### 2.2 Analysezeitraum und struktureller Bruch
 
-Die Coverage-Prüfung zeigt einen strukturellen Einschnitt am 21.04.2022 durch eine Änderung der Scraper-Architektur und des Quellenpanels. Um verzerrte Vorher-Nachher-Vergleiche zu vermeiden, basiert die quantitative Hauptauswertung auf dem stabileren Zeitraum vom 21.04.2022 bis 31.01.2025. Dieser Zeitraum umfasst 1.017 Kalendertage. Für diesen Zeitraum liegen Daten von 46 Medienquellen vor.
+Aufbauend auf dieser Quellenbasis zeigt die Coverage-Prüfung einen strukturellen Einschnitt am 21.04.2022 durch eine Änderung der Scraper-Architektur und des Quellenpanels. Um verzerrte Vorher-Nachher-Vergleiche zu vermeiden, basiert die quantitative Hauptauswertung auf dem stabileren Zeitraum vom 21.04.2022 bis 31.01.2025. Dieser Zeitraum umfasst 1.017 Kalendertage. Für diesen Zeitraum liegen Daten von 46 Medienquellen vor.
+
+### 2.2a Auswahl deutschsprachiger Quellen
+
+Für die inhaltliche Auswahl wurden nur Medien mit dem HTML-Attribut lang="de" berücksichtigt. Dadurch ist sichergestellt, dass ausschließlich deutschsprachige Inhalte in die Analyse eingehen. Die 46 Medienquellen stammen aus dieser gefilterten Auswahl.
 
 ### 2.3 Begriffsauswahl und Kategorisierung
 
@@ -73,7 +77,7 @@ Analysiert werden die drei häufigsten Klima-Komposita der Datenbasis:
 
 Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c).
 
-Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer über einfache Präfixregeln den drei Zielbegriffen zugeordnet: wandel*, krise* und schutz*. Dadurch werden beispielsweise Formen wie Wandel, Wandels, Krisen, Schutzabkommen oder Krisenabkommen konsistent erfasst. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv.
+Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer über einfache Präfixregeln den drei Zielbegriffen zugeordnet: wandel*, krise* und schutz*. Dadurch werden beispielsweise Formen wie Wandel, Wandels, Krisen, Schutzabkommen oder Krisenabkommen konsistent erfasst. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv, also auf die Beschreibung beobachteter Verteilungen und Entwicklungen beschränkt, ohne kausale Wirkungen oder statistische Signifikanz zu prüfen.
 
 ### 2.4 Auswertungsschritte
 
@@ -84,6 +88,8 @@ Die Auswertung umfasst drei Schritte:
 3. Vergleich neutral-deskriptiv vs. alarmistisch als reduziertes Zwei-Kategorien-Setting (Klimawandel vs. Klimakrise), angelehnt an internationale Vergleichslogik.
 
 Wichtiger Hinweis zum Nenner: Relative Anteile in Kapitel 3 beziehen sich auf die Summe der drei Zielbegriffe (Top-3-Set) und nicht auf alle im Korpus vorkommenden Klima-Komposita.
+
+Die relative Betrachtung dämpft die ohnehin subjektive Suffixzuordnung deutlich, weil kleinere Unterschiede zwischen Verfahren im Prozentvergleich kaum noch sichtbar werden. Dadurch werden die grundlegenden Beobachtungen robuster und besser vergleichbar.
 
 ### 2.5 Datenqualität und Grenzen
 
@@ -158,9 +164,9 @@ Zweitens steigt Klimawandel deutlich. Das kann auf sprachliche Normalisierung, r
 
 Drittens sinkt Klimaschutz relativ stark. Das deutet auf eine Verschiebung von lösungsbezogenen Begriffen zu problembeschreibenden Begriffen hin. Diese Entwicklung ist relevant, weil Kommunikationsforschung zeigt, dass Frame-Wirkungen je nach Problem- versus Handlungsfokus unterschiedlich ausfallen können (Abstract Feldman & Hart, 2021; Stoknes, 2014).
 
-### 4.3 Was sich aus den Daten sagen lässt und was nicht
+### 4.3 Aussagekraft und Grenzen der Befunde
 
-Die Arbeit erlaubt robuste deskriptive Aussagen zur Begriffsverteilung auf Titelseiten im untersuchten Panel. Sie erlaubt keine kausalen Aussagen darüber, warum Redaktionen bestimmte Begriffe wählen. Aussagen wie "Der Guardian war der alleinige Auslöser globaler Sprachverschiebungen" wären daher zu stark. Plausibler ist eine Kombination aus redaktionellen Richtlinien, politischen Ereignissen und länderspezifischen Öffentlichkeiten (Carrington, 2019; McHugh et al., 2021).
+Die Arbeit erlaubt robuste deskriptive Aussagen zur Begriffsverteilung auf Titelseiten im untersuchten Panel. Sie zeigt, wie sich die Verwendung der zentralen Klima-Komposita im Zeitverlauf verschiebt, ohne daraus kausale Wirkzusammenhänge ableiten zu können. Aussagen darüber, warum Redaktionen bestimmte Begriffe wählen, wären mit dieser Datenbasis zu weitreichend. Plausibler ist eine Kombination aus redaktionellen Richtlinien, politischen Ereignissen und länderspezifischen Öffentlichkeiten (Carrington, 2019; McHugh et al., 2021).
 
 ### 4.4 Handlungsempfehlungen
 
