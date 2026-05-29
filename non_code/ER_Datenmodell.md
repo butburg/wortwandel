@@ -39,7 +39,7 @@ flowchart TD
     SILVER --> NB08["08_optional_Suffix_Exploration\noptional"]
     BRONZE --> NB09["09_optional_DB_Vergleich_fehlerhaft_vs_bereinigt\nDB-Vergleich"]
 
-    NB06 --> PLOTS[("data_output/plots/\ngrafik_1,2,3.png")]
+    NB06 --> PLOTS[("data_output/plots/\n06_grafik_1,2,3.png")]
 
     style NB06 fill:#d4edda,stroke:#28a745
     style BRONZE fill:#fff3cd,stroke:#ffc107
