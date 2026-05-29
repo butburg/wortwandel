@@ -46,16 +46,15 @@ Alte Notebooks wurden bewusst archiviert und werden nicht mehr weiterentwickelt.
 
 ## Aktive Notebook-Pipeline in code_generated
 
-1. `01_lake_to_dwh.ipynb` - Rohdaten in SQLite DWH ueberfuehren (`newspapers`, `context`)
-2. `02_experiment_eda.ipynb` - fruehe EDA auf Bronze-Daten
+1. `01_Rohdaten_ins_DWH.ipynb` - Rohdaten in SQLite DWH ueberfuehren (`newspapers`, `context`)
+2. `02_Experimentelle_EDA.ipynb` - fruehe EDA auf Bronze-Daten
 3. `03_Datenqualität_Nullen.ipynb` - Datenqualitaet, Nullen, Luecken, Coverage
 4. `04_Datenbasis_EDA.ipynb` - EDA auf der aufbereiteten Datenbasis
-5. `05_Processing.ipynb` - Verarbeitung und Build von `*_processed` Tabellen
-6. `06_Klima_Begriffe_Analyse.ipynb` - Hauptanalyse und Kernplots
-7. `07_optional_Vergleich_Exact_vs_Lemma.ipynb` - optionaler Robustheitsvergleich
-8. `08_optional_Suffix_EDA.ipynb` - optionale Suffix-Exploration
-9. `09_diagnose_Feb2025_Qualität.ipynb` - Diagnose der Feb-2025-Anomalie
-10. `10_compare_faulty_vs_clean_db.ipynb` - Vergleich zwischen faulty und clean DB
+5. `05_Datenaufbereitung.ipynb` - Verarbeitung und Build von `*_processed` Tabellen
+6. `06_Klimabegriffe_Analyse.ipynb` - Hauptanalyse und Kernplots
+7. `07_optional_Vergleich_Exakt_vs_Lemma.ipynb` - optionaler Robustheitsvergleich
+8. `08_optional_Suffix_Exploration.ipynb` - optionale Suffix-Exploration
+9. `09_optional_DB_Vergleich_fehlerhaft_vs_bereinigt.ipynb` - optionaler Vergleich zwischen fehlerhafter und bereinigter Datenbank
 
 **Kernlauf fuer die Abgabe**: 01 bis 06.
 
@@ -96,7 +95,7 @@ Alte Notebooks wurden bewusst archiviert und werden nicht mehr weiterentwickelt.
 
 1. Analysen nur noch in `code_generated/` pflegen.
 2. Ergebnisse aus Kernlauf 01-06 in den Textteil ueberfuehren.
-3. Optionale Notebooks 07-10 nur fuer Robustheit/Qualitaetsnachweise nutzen.
+3. Optionale Notebooks 07-09 nur fuer Robustheit/Qualitaetsnachweise nutzen.
 4. Archiv-Bereich unveraendert lassen, nur bei Bedarf als Referenz heranziehen.
 
 ---

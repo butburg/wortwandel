@@ -59,7 +59,7 @@ Du schreibst **den Code** für das, was der Student-Agent anfordert. Du machst *
 - Keine generische Kandidatenlogik fuer bekannte Spalten (z.B. `date_candidates`, `paper_candidates`, `id_candidates`) in stabilen Notebooks.
 - Klare, erwartete Spaltennamen verwenden.
 
-**Pfadstandard fuer alle Notebooks (verbindlich, wie 01_lake_to_dwh)**:
+**Pfadstandard fuer alle Notebooks (verbindlich, wie 01_Rohdaten_ins_DWH)**:
 - Setup immer ueber `notebook_dir` aufbauen:
    - `notebook_dir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()`
    - `sys.path.append(os.path.join(notebook_dir, "..", "pylib"))`

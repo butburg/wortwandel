@@ -5,7 +5,7 @@ Analyse des Begriffswandels von Klima-Komposita auf deutschsprachigen Online-Tit
 ## Projektstruktur
 
 ```
-code_generated/   Finale Analyse-Notebooks (01–10)
+code_generated/   Finale Analyse-Notebooks (01–09)
 pylib/            Wiederverwendbare Python-Module
 data_input/       Rohdaten (SQLite-Quelldatenbank)
 data_output/      Ergebnisdatenbank (dwh_data.db) und Plots
@@ -17,14 +17,14 @@ tests/            pytest-Tests zur Importlogik
 
 Notebooks in dieser Reihenfolge ausführen:
 
-1. `01_lake_to_dwh.ipynb` – ETL: Rohdaten → DWH (`dwh_data.db`)
-2. `02_experiment_eda.ipynb` – Frühe EDA auf Bronze-Daten
+1. `01_Rohdaten_ins_DWH.ipynb` – ETL: Rohdaten → DWH (`dwh_data.db`)
+2. `02_Experimentelle_EDA.ipynb` – Frühe EDA auf Bronze-Daten
 3. `03_Datenqualität_Nullen.ipynb` – Coverage- und Lückenanalyse
 4. `04_Datenbasis_EDA.ipynb` – Strukturierte EDA der Datenbasis
-5. `05_Processing.ipynb` – Aufbereitung (`context_processed`)
-6. `06_Klima_Begriffe_Analyse.ipynb` – Hauptanalyse und Visualisierungen
+5. `05_Datenaufbereitung.ipynb` – Aufbereitung (`context_processed`)
+6. `06_Klimabegriffe_Analyse.ipynb` – Hauptanalyse und Visualisierungen
 
-Notebooks 07–10 sind optionale Robustheitschecks und Diagnoseschritte.
+Notebooks 07–09 sind optionale Robustheitschecks und Diagnoseschritte.
 
 ## Abhängigkeiten
 
