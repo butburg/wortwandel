@@ -251,9 +251,9 @@ Zweikategorien-Vergleich Klimawandel (neutral) vs. Klimakrise (alarmistisch):
 | 2024Q4 | 68,4 | 31,6 |
 | 2025Q1 | 71,6 | 28,4 |
 
-### A5: Datenbankschema (SERM)
+### A5: Datenbankschema (ER-Diagramm)
 
-Die Analysedatenbank `dwh_data.db` enthält drei Tabellen in zwei Verarbeitungsstufen:
+Die Analysedatenbank `dwh_data.db` enthält drei persistente Tabellen in zwei Verarbeitungsstufen. Das ER-Diagramm zeigt die zentrale Entität `newspapers` als Zeitung-Tag-Ebene sowie die beiden Kontexttabellen für Roh- und aufbereitete Trefferkontexte.
 
 | Tabelle | Stufe | Zeilen | Schlüssel |
 |---------|-------|-------:|-----------|
@@ -261,41 +261,15 @@ Die Analysedatenbank `dwh_data.db` enthält drei Tabellen in zwei Verarbeitungss
 | `context` | Bronze | 172.610 | `context_id` (PK), `newspaper_id` (FK) |
 | `context_processed` | Silver | 172.610 | `newspaper_id` (FK), + `suffix_lemma` |
 
-**Beziehungen:** `newspapers` 1 ↔ n `context` und `context_processed` — eine Zeitung-Tag-Kombination kann mehrere Klima-Nennungen enthalten. Der natürliche Schlüssel in `newspapers` sichert idempotente ETL-Läufe ab.
+![ER-Diagramm der Analysedatenbank](<ER diagramm wortwandel.svg>)
 
-```
-newspapers
-  PK  newspaper_id       INTEGER
-  NK  newspaper_name     TEXT (NOT NULL)
-  NK  data_published     TEXT (NOT NULL, YYYY-MM-DD)
-      klima_mentions_count INTEGER (NOT NULL)
-        |
-        | 1:n
-        ↓
-context                          context_processed
-  PK  context_id  INTEGER        context_id         INTEGER
-  FK  newspaper_id               newspaper_id       FK
-      pre_context  TEXT          pre_context        TEXT
-      post_context TEXT          post_context       TEXT
-      prefix       TEXT          prefix             TEXT
-      suffix       TEXT          suffix             TEXT
-                                 suffix_lemma       TEXT  ← Lemma-Cluster (NB 05)
-```
+Der natürliche Schlüssel in `newspapers` verhindert doppelte Zeitung-Tag-Einträge bei wiederholten Importläufen. `context_processed` erweitert die Rohkontexte um die in Notebook 05 gebildeten Lemma-Cluster und bildet damit die Grundlage für die Silver-Analysen.
 
-### A6: Notebook-Ausführungsreihenfolge
+### A6: Notebook-Ablauf
 
-| Nr. | Notebook | Eingabe | Ausgabe | Rolle |
-|-----|----------|---------|---------|-------|
-| 01 | `01_lake_to_dwh` | `data_input/` | `newspapers`, `context` | ETL Bronze |
-| 02 | `02_experiment_eda` | Bronze-DB | EDA-Outputs | Frühe Exploration |
-| 03 | `03_Datenqualität_Nullen` | Bronze-DB | Coverage-Analyse | Qualitätsprüfung |
-| 04 | `04_Datenbasis_EDA` | Bronze-DB | Strukturierte EDA | Datenbasis-Analyse |
-| 05 | `05_Processing` | Bronze-DB | `context_processed` | Silver-Aufbereitung |
-| 06 | `06_Klima_Begriffe_Analyse` | Silver | `grafik_1,2,3.png` | **Hauptanalyse** |
-| 07 | `07_optional_Vergleich_Exact_vs_Lemma` | Silver | Robustheitsgrafiken | Methodenvergleich |
-| 08 | `08_optional_Suffix_EDA` | Silver | Suffix-EDA | Optionale Exploration |
-| 09 | `09_diagnose_Feb2025_Qualität` | Bronze+Silver | Diagnosegrafiken | Anomalie-Diagnose |
-| 10 | `10_compare_faulty_vs_clean_db` | Beide DBs | Vergleichsgrafiken | Importbug-Nachweis |
+Der Projektaufbau trennt den reproduzierbaren Kernlauf der Studienarbeit von optionalen Robustheits- und Diagnoseauswertungen. Die Rohdaten werden zunächst in die Bronze-Tabellen `newspapers` und `context` überführt, anschließend in `context_processed` als Silver-Analysebasis aufbereitet und schließlich in den Analyse- und Vergleichsnotebooks ausgewertet.
+
+![Projektaufbau und Notebook-Ablauf](<projektaufbau.png>)
 
 Kernlauf für die Studienarbeit: **01 → 02 → 03 → 04 → 05 → 06**.
 
@@ -324,4 +298,3 @@ McHugh, L. H., Lemos, M. C., & Morrison, T. H. (2021). Risk? Crisis? Emergency? 
 Schäfer, M. S., Hase, V., Mahl, D., & Krayss, X. (2023). From climate change to climate crisis? Bergen Language and Linguistics Studies, 13(1), 161-183. https://doi.org/10.15845/bells.v13i1.3980
 
 Stoknes, P. E. (2014). Rethinking climate communications and the climate crisis: A public health perspective. Energy Research & Social Science, 1, 161-170. https://doi.org/10.1016/j.erss.2014.03.007
-
