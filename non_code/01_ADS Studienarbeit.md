@@ -32,6 +32,16 @@ Prof. Dr. Marcel Hebing
 Eingereicht von          	Edwin Wiese
 Datum                           	12. Sept. 2025
 
+## Executive Summary
+
+Diese Studienarbeit analysiert, wie sich die Verwendung der drei häufigsten Klima-Komposita – Klimawandel, Klimaschutz und Klimakrise – auf deutschsprachigen Online-Titelseiten zwischen April 2022 und Januar 2025 entwickelt hat. Datengrundlage sind eigene Scraper-Daten von 46 Medienquellen mit insgesamt 40.667 ausgewerteten Nennungen.
+
+**Kernergebnisse:** Klimawandel ist mit 49 % der Nennungen der dominierende Begriff und hat seinen relativen Anteil im Beobachtungszeitraum von rund 41 % auf 53 % gesteigert. Klimaschutz verliert spürbar: von 39 % auf 25 %. Klimakrise bleibt mit Anteilen zwischen 21 % und 26 % weitgehend stabil. Im direkten Vergleich dieser beiden Begriffe sinkt der Anteil alarmistischer Sprache von 33,7 % (2022Q2) auf 28,4 % (2025Q1).
+
+**Schlussfolgerung:** Im untersuchten DACH-Ausschnitt ist keine Eskalation alarmistischer Klimasprache erkennbar – der Trend zeigt eine Verschiebung hin zu neutral-deskriptiver Terminologie. Dies steht im Kontrast zu internationalen Befunden, die seit 2019 einen Zuwachs alarmistischer Labels verzeichnen (Schäfer et al., 2023), und verweist auf nationale Medienlogiken oder unterschiedliche Beobachtungsfenster als mögliche Erklärung.
+
+**Handlungsempfehlungen:** Erweiterung auf quellenbezogene Auswertungen und Volltextanalysen sowie eine Fortschreibung über 2025 hinaus, um die beobachtete Stabilisierung zu überprüfen. Die vorliegenden Daten eignen sich als Ausgangspunkt für Anschlussforschung zur DACH-spezifischen Klimakommunikation.
+
 ## 1. Einleitung
 
 Die öffentliche Klimadebatte wird nicht nur über Daten und Ereignisse geführt, sondern auch über Begriffe. Ob Medien eher von Klimawandel, Klimaschutz oder Klimakrise sprechen, beeinflusst die Wahrnehmung von Dringlichkeit, Verantwortlichkeit und Handlungsbedarf. Für die gesellschaftliche Einordnung der Klimakrise sind diese sprachlichen Unterschiede relevant, weil sie als Teil journalistischer Agenda- und Framebildung wirken (Entman, 1993; McHugh et al., 2021). Die wissenschaftliche Dringlichkeit ist zugleich gut belegt, etwa laut Pressemitteilung zum AR6-Synthesebericht des IPCC (IPCC, 2023).
@@ -77,7 +87,7 @@ Analysiert werden die drei häufigsten Klima-Komposita der Datenbasis:
 
 Die Kategorisierung folgt der internationalen Terminologie-Debatte in der Klimakommunikationsforschung (Schäfer et al., 2023; Haueis, 2024) und wird durch lexikalische Abgrenzungen gestützt (Duden, 2025a, 2025b, 2025c).
 
-Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer über einfache Präfixregeln den drei Zielbegriffen zugeordnet: wandel*, krise* und schutz*. Dadurch werden beispielsweise Formen wie Wandel, Wandels, Krisen, Schutzabkommen oder Krisenabkommen konsistent erfasst. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv, also auf die Beschreibung beobachteter Verteilungen und Entwicklungen beschränkt, ohne kausale Wirkungen oder statistische Signifikanz zu prüfen.
+Operationalisierung: Aus den Kontextdaten wurden alle Fundstellen extrahiert, die den Wortstamm Klima enthalten. Für die Hauptanalyse wurden anschließend alle Treffer über einfache Suffixregeln den drei Zielbegriffen zugeordnet: wandel*, krise* und schutz*. Dabei handelt es sich um Suffixmuster innerhalb des Kompositums (der Teil nach dem Präfix „Klima"). Dadurch werden beispielsweise Formen wie Klimawandels, Klimakrisen oder Klimaschutzabkommen konsistent erfasst. Gezählt wurden Vorkommen der Begriffe auf Basis der erfassten Kontexttreffer. Die Auswertung ist deskriptiv, also auf die Beschreibung beobachteter Verteilungen und Entwicklungen beschränkt, ohne kausale Wirkungen oder statistische Signifikanz zu prüfen.
 
 ### 2.4 Auswertungsschritte
 
@@ -90,6 +100,8 @@ Die Auswertung umfasst drei Schritte:
 Wichtiger Hinweis zum Nenner: Relative Anteile in Kapitel 3 beziehen sich auf die Summe der drei Zielbegriffe (Top-3-Set) und nicht auf alle im Korpus vorkommenden Klima-Komposita.
 
 Die relative Betrachtung dämpft die ohnehin subjektive Suffixzuordnung deutlich, weil kleinere Unterschiede zwischen Verfahren im Prozentvergleich kaum noch sichtbar werden. Dadurch werden die grundlegenden Beobachtungen robuster und besser vergleichbar.
+
+Als optionaler Robustheitscheck wurde das Suffix-Matching mit einem konservativen Lemma-Gruppierungsverfahren verglichen (Notebook 07). Dabei werden morphologisch ähnliche Wortformen, z. B. Flexionsendungen wie „-s" oder „-en", zu einem Lemmacluster zusammengefasst. Die relativen Trendverläufe der drei Begriffe erwiesen sich als stabil gegenüber diesem Methodenwechsel, was die Belastbarkeit der Hauptergebnisse stützt.
 
 ### 2.5 Datenqualität und Grenzen
 
@@ -113,13 +125,13 @@ Die Korrektur wurde mit automatisierten Tests auf Basis von pytest abgesichert. 
 
 ### 3.1 Gesamtverteilung
 
-Im Analysezeitraum (21.04.2022 bis 31.01.2025) wurden insgesamt 42.540 Nennungen der drei Zielbegriffe gezählt.
+Im Analysezeitraum (21.04.2022 bis 31.01.2025) wurden insgesamt 40.667 Nennungen der drei Zielbegriffe gezählt.
 
 | Begriff | Absolute Häufigkeit | Relativer Anteil |
 |---------|--------------------:|----------------:|
-| Klimawandel | 19.918 | 46,82 % |
-| Klimaschutz | 13.390 | 31,48 % |
-| Klimakrise | 9.232 | 21,70 % |
+| Klimawandel | 19.922 | 49,0 % |
+| Klimaschutz | 11.463 | 28,2 % |
+| Klimakrise | 9.282 | 22,8 % |
 
 Der am häufigsten verwendete Begriff ist Klimawandel. Klimakrise bleibt mit gut einem Fünftel der Nennungen deutlich dahinter.
 
@@ -127,9 +139,9 @@ Der am häufigsten verwendete Begriff ist Klimawandel. Klimakrise bleibt mit gut
 
 Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
-- Klimawandel steigt von rund 39 % auf 53 %.
-- Klimaschutz sinkt von rund 41 % auf 27 %.
-- Klimakrise bleibt im Bereich von rund 20 % bis 22 % weitgehend stabil.
+- Klimawandel steigt von rund 41 % auf 53 %.
+- Klimaschutz sinkt von rund 39 % auf 25 %.
+- Klimakrise schwankt im Bereich von rund 21 % bis 26 % weitgehend stabil.
 
 ![Grafik 1: Zeitliche Entwicklung](../data_output/plots/grafik_1_zeitliche_entwicklung.png)
 
@@ -139,8 +151,8 @@ Die quartalsweise Entwicklung im Top-3-Set zeigt folgende Trends:
 
 Für den direkten Anschluss an die internationale Diskussion wurde zusätzlich das Verhältnis von Klimawandel (neutral-deskriptiv) zu Klimakrise (alarmistisch) betrachtet. Im Vergleich dieser beiden Begriffe verschiebt sich der Anteil zugunsten neutral-deskriptiver Bezeichnungen:
 
-- Erstes Quartal im Analysefenster: 66,4 % neutral-deskriptiv, 33,6 % alarmistisch
-- Letztes Quartal im Analysefenster: 72,7 % neutral-deskriptiv, 27,3 % alarmistisch
+- Erstes Quartal im Analysefenster (2022Q2): 66,3 % neutral-deskriptiv, 33,7 % alarmistisch
+- Letztes Quartal im Analysefenster (2025Q1): 71,6 % neutral-deskriptiv, 28,4 % alarmistisch
 
 ![Grafik 2: Neutral-deskriptiv versus alarmistisch](../data_output/plots/grafik_2b_neutral_vs_alarmistisch_linien.png)
 
@@ -177,7 +189,115 @@ Die Arbeit erlaubt robuste deskriptive Aussagen zur Begriffsverteilung auf Titel
 
 ## Anhang
 
-Zusätzliche Grafiken und Detailtabellen werden im Anhang dokumentiert, darunter die reine absolute Häufigkeitsgrafik als Ergänzung zur Ergebnisdarstellung.
+### A1: Absolute Häufigkeiten (Grafik)
+
+![Grafik 3: Absolute Häufigkeiten](../data_output/plots/grafik_3_absolute_haeufigkeiten.png)
+
+*Abbildung 3: Absolute Häufigkeiten der drei Klima-Komposita im Gesamtzeitraum (2022–2025).*
+
+### A2: Quartalsweise Häufigkeiten (absolute Zählungen)
+
+Vollständige Quartalsdaten als Grundlage der Ergebnisdarstellung (Notebook 06, Analyse 2b):
+
+| Quartal | Klimakrise | Klimaschutz | Klimawandel | Gesamt |
+|---------|----------:|------------:|------------:|-------:|
+| 2022Q2 | 592 | 1.120 | 1.167 | 2.879 |
+| 2022Q3 | 1.102 | 1.273 | 2.081 | 4.456 |
+| 2022Q4 | 877 | 1.424 | 1.547 | 3.848 |
+| 2023Q1 | 1.044 | 1.257 | 1.779 | 4.080 |
+| 2023Q2 | 956 | 1.489 | 1.715 | 4.160 |
+| 2023Q3 | 916 | 1.142 | 2.141 | 4.199 |
+| 2023Q4 | 789 | 851 | 1.762 | 3.402 |
+| 2024Q1 | 536 | 564 | 1.488 | 2.588 |
+| 2024Q2 | 766 | 754 | 2.018 | 3.538 |
+| 2024Q3 | 643 | 542 | 1.857 | 3.042 |
+| 2024Q4 | 876 | 824 | 1.900 | 3.600 |
+| 2025Q1 | 185 | 223 | 467 | 875 |
+| **Gesamt** | **9.282** | **11.463** | **19.922** | **40.667** |
+
+### A3: Quartalsweise relative Anteile (%)
+
+| Quartal | Klimakrise % | Klimaschutz % | Klimawandel % |
+|---------|-------------:|--------------:|---------------:|
+| 2022Q2 | 20,6 | 38,9 | 40,5 |
+| 2022Q3 | 24,7 | 28,6 | 46,7 |
+| 2022Q4 | 22,8 | 37,0 | 40,2 |
+| 2023Q1 | 25,6 | 30,8 | 43,6 |
+| 2023Q2 | 23,0 | 35,8 | 41,2 |
+| 2023Q3 | 21,8 | 27,2 | 51,0 |
+| 2023Q4 | 23,2 | 25,0 | 51,8 |
+| 2024Q1 | 20,7 | 21,8 | 57,5 |
+| 2024Q2 | 21,7 | 21,3 | 57,0 |
+| 2024Q3 | 21,1 | 17,8 | 61,1 |
+| 2024Q4 | 24,3 | 22,9 | 52,8 |
+| 2025Q1 | 21,1 | 25,5 | 53,4 |
+
+### A4: Neutral-deskriptiv vs. alarmistisch pro Quartal (%)
+
+Zweikategorien-Vergleich Klimawandel (neutral) vs. Klimakrise (alarmistisch):
+
+| Quartal | Neutral (Klimawandel) % | Alarmistisch (Klimakrise) % |
+|---------|------------------------:|----------------------------:|
+| 2022Q2 | 66,3 | 33,7 |
+| 2022Q3 | 65,4 | 34,6 |
+| 2022Q4 | 63,8 | 36,2 |
+| 2023Q1 | 63,0 | 37,0 |
+| 2023Q2 | 64,2 | 35,8 |
+| 2023Q3 | 70,0 | 30,0 |
+| 2023Q4 | 69,1 | 30,9 |
+| 2024Q1 | 73,5 | 26,5 |
+| 2024Q2 | 72,5 | 27,5 |
+| 2024Q3 | 74,3 | 25,7 |
+| 2024Q4 | 68,4 | 31,6 |
+| 2025Q1 | 71,6 | 28,4 |
+
+### A5: Datenbankschema (SERM)
+
+Die Analysedatenbank `dwh_data.db` enthält drei Tabellen in zwei Verarbeitungsstufen:
+
+| Tabelle | Stufe | Zeilen | Schlüssel |
+|---------|-------|-------:|-----------|
+| `newspapers` | Bronze | 58.775 | `newspaper_id` (PK), `(newspaper_name, data_published)` Nat.-Key |
+| `context` | Bronze | 172.610 | `context_id` (PK), `newspaper_id` (FK) |
+| `context_processed` | Silver | 172.610 | `newspaper_id` (FK), + `suffix_lemma` |
+
+**Beziehungen:** `newspapers` 1 ↔ n `context` und `context_processed` — eine Zeitung-Tag-Kombination kann mehrere Klima-Nennungen enthalten. Der natürliche Schlüssel in `newspapers` sichert idempotente ETL-Läufe ab.
+
+```
+newspapers
+  PK  newspaper_id       INTEGER
+  NK  newspaper_name     TEXT (NOT NULL)
+  NK  data_published     TEXT (NOT NULL, YYYY-MM-DD)
+      klima_mentions_count INTEGER (NOT NULL)
+        |
+        | 1:n
+        ↓
+context                          context_processed
+  PK  context_id  INTEGER        context_id         INTEGER
+  FK  newspaper_id               newspaper_id       FK
+      pre_context  TEXT          pre_context        TEXT
+      post_context TEXT          post_context       TEXT
+      prefix       TEXT          prefix             TEXT
+      suffix       TEXT          suffix             TEXT
+                                 suffix_lemma       TEXT  ← Lemma-Cluster (NB 05)
+```
+
+### A6: Notebook-Ausführungsreihenfolge
+
+| Nr. | Notebook | Eingabe | Ausgabe | Rolle |
+|-----|----------|---------|---------|-------|
+| 01 | `01_lake_to_dwh` | `data_input/` | `newspapers`, `context` | ETL Bronze |
+| 02 | `02_experiment_eda` | Bronze-DB | EDA-Outputs | Frühe Exploration |
+| 03 | `03_Datenqualität_Nullen` | Bronze-DB | Coverage-Analyse | Qualitätsprüfung |
+| 04 | `04_Datenbasis_EDA` | Bronze-DB | Strukturierte EDA | Datenbasis-Analyse |
+| 05 | `05_Processing` | Bronze-DB | `context_processed` | Silver-Aufbereitung |
+| 06 | `06_Klima_Begriffe_Analyse` | Silver | `grafik_1,2,3.png` | **Hauptanalyse** |
+| 07 | `07_optional_Vergleich_Exact_vs_Lemma` | Silver | Robustheitsgrafiken | Methodenvergleich |
+| 08 | `08_optional_Suffix_EDA` | Silver | Suffix-EDA | Optionale Exploration |
+| 09 | `09_diagnose_Feb2025_Qualität` | Bronze+Silver | Diagnosegrafiken | Anomalie-Diagnose |
+| 10 | `10_compare_faulty_vs_clean_db` | Beide DBs | Vergleichsgrafiken | Importbug-Nachweis |
+
+Kernlauf für die Studienarbeit: **01 → 02 → 03 → 04 → 05 → 06**.
 
 ## Quellenverzeichnis
 
