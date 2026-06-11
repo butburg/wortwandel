@@ -13,6 +13,9 @@
 - Wiederholte Einschränkungen an mehreren Stellen (kausale Grenzen mehrfach in ähnlicher Form).
 - Uneinheitliche Kategorielabel ("neutral" vs. "neutral-deskriptiv").
 - Quellen im Verzeichnis ohne Textbezug (z. B. unzitierte Referenzen).
+- Uneinheitliche Zitationsmarkierungen im Fließtext (z. B. "Abstract Feldman & Hart, 2021" statt einheitlich "Feldman & Hart, 2021").
+- Fehlende explizite Verweise auf Abbildungen im Argumentationsfluss (nur Bild + Caption, ohne "siehe Abbildung X").
+- Typografische Inkonsistenzen bei Anführungszeichen in Klammern/Zitaten (gemischte deutsche und gerade Anführungszeichen).
 
 ## Stil-Tipps
 - Management-Report-Ton: kurze, präzise Sätze mit klarer Aussage pro Satz.

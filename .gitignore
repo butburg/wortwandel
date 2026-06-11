@@ -192,3 +192,4 @@ cython_debug/
 
 .DS_Store
 non_code/~$*.docx
+wortwandel_export_*
